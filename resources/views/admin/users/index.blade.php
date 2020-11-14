@@ -10,7 +10,7 @@
  <!-- Page Heading -->
 <!--   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Список пользователей</h1>
- 
+
   </div> -->
   <!-- Main content -->
 <!--   <div class="row"> -->
@@ -20,7 +20,7 @@
         <th>ID</th>
         <th>Имя</th>
         <th>E-mail</th>
-        <th>Аватар</th>
+        <th>Роль</th>
         <th>Управление</th>
       </tr>
       </thead>
@@ -30,9 +30,14 @@
           <td>{{$user->id}}</td>
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
-          <td></td>
           <td>
-           
+              @foreach($user->roles as $role)
+                  <span class="badge badge-success"> {{$role->name}}</span>
+              @endforeach
+          </td>
+
+          <td>
+            <button class="btn btn-primary">test</button>
           </td>
         </tr>
       @endforeach
@@ -43,13 +48,16 @@
 @stop
 
 @section('css')
-   <!--  <link rel="stylesheet" href="/css/admin_custom.css"> -->
+
+
 @stop
 
 @section('js')
+
     <script>
     $(document).ready( function () {
     	$('#myTable').DataTable();
+        $('.select2').select2();
 	});
 	</script>
 @stop

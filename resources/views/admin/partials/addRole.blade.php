@@ -3,7 +3,7 @@
         <div class="card-header">{{ __('Добавить новую роль') }}</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.roles.store') }}">
+            <form method="POST" action="{{ route('administrator.roles.store') }}">
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Роль') }}</label>

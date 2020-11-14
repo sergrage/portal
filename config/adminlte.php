@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'app',
 
     'logout_url' => 'logout',
 
@@ -251,23 +251,23 @@ return [
         ['header' => 'Dashboard'],
         [
             'text' => 'Dashboard',
-            'url'  => 'admin',
+            'url'  => 'administrator',
             'icon' => 'fas fa-fw fa-user',
         ],
         ['header' => 'Настройки'],
         [
             'text' => 'Пользователи',
-            'url'  => 'admin/users',
+            'url'  => 'administrator/users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Роли',
-            'url'  => 'admin/roles',
+            'url'  => 'administrator/roles',
             'icon' => 'fas fa-user-tag',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'administrator/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -377,17 +377,17 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'asset' => false,
+                    'location' => 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'asset' => false,
+                    'location' => 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css',
                 ],
             ],
         ],

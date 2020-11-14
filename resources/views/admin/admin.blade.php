@@ -18,14 +18,19 @@
 
 
 @section('css')
-   <!--  <link rel="stylesheet" href="/css/admin_custom.css"> -->
+    <link href="{{ mix('admin/css/admin.css') }}" rel="stylesheet">
 @stop
 
 @section('js')
-<script>
-	 $('.select2').select2({
-  theme: "bootstrap",
-  width: 'resolve' 
-	});
-</script>
+    <script src="{{ mix('admin/js/admin.js') }}"></script>
+    <script>
+
+        $('.select2').select2({
+            placeholder: 'Select an option',
+            theme: "bootstrap",
+            width: 'resolve'
+        });
+
+    </script>
+
 @stop

@@ -24,7 +24,7 @@ class RoleController extends Controller
        ]);
 
 
-    	return redirect()->route('admin.roles.index');
+    	return redirect()->route('administrator.roles.index');
     }
 
     public function show(Role $role)
@@ -38,13 +38,13 @@ class RoleController extends Controller
             'name'  =>  $request['name'],
        ]);
 
-    	return redirect()->route('admin.roles.index');
+    	return redirect()->route('administrator.roles.index');
     }
 
 
     public function destroy(Role $role)
     {
     	$role->delete();
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('administrator.roles.index');
     }
 }

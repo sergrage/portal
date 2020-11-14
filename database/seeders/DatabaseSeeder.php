@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         $user = \App\Models\User::factory(1)->create()->first();
+         $role = \App\Models\Role::factory(1)->create()->first();
+         $user->roles()->attach($role->id);
+
     }
 }
