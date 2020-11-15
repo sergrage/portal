@@ -5,7 +5,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Главная</a>
+            <a href="{{route('app')}}" class="nav-link">Главная</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Контакты</a>
@@ -92,6 +92,11 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                @if(Auth::user()->isAdmin())
+                <a class="dropdown-item" href="{{ route('administrator.dashboard') }}">
+                    {{ __('  Админка') }} <i class="fas fa-unlock"></i>
+                </a>
+                @endif
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

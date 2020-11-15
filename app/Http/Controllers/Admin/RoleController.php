@@ -19,8 +19,7 @@ class RoleController extends Controller
     	return view('admin.roles.index', compact('roles'));
     }
 
-    public function store(CreateRequest $request)
-    {
+    public function store(Request $request) {
 
         $role = Role::create([
             'roleName'  =>  $request['roleName'],

@@ -2,18 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');;
 
 
 Auth::routes();
 
-Route::get('/app', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
-
 // Страница Админки
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'can:admin-panel'])->group(function () {
 	Route::prefix('administrator')->group(function () {
 		Route::name('administrator.')->group(function () {
 
