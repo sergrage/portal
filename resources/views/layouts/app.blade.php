@@ -12,9 +12,9 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/jpeg">
     <!-- app css -->
-    <link rel="stylesheet" href="app/css/app.css">
+    <link rel="stylesheet" href="/app/css/app.css">
     <!-- adminlte -->
-    <link rel="stylesheet" href="app/css/adminlte.css">
+    <link rel="stylesheet" href="/app/css/adminlte.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -37,11 +37,12 @@
        <!-- Sidebar user panel (optional) -->
        @guest
        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-           @include('app.partials.login')
+       @include('app.partials.login')
        </div>
        @endguest
        <!-- Sidebar Menu -->
-       @include('app.partials.sidebar')
+       @yield('sidebar')
+
        <!-- /.sidebar-menu -->
         </div>
     <!-- /.sidebar -->
@@ -60,11 +61,11 @@
 </div>
 <!-- ./wrapper -->
 <!-- REQUIRED SCRIPTS -->
-<script src="admin/js/admin.js"></script>
+<script src="/app/js/app.js"></script>
 <!-- OPTIONAL SCRIPTS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script src="dist/js/demo.js"></script>
-<script src="dist/js/pages/dashboard3.js"></script>
+{{--<script src="plugins/chart.js/Chart.min.js"></script>--}}
+{{--<script src="dist/js/demo.js"></script>--}}
+{{--<script src="dist/js/pages/dashboard3.js"></script>--}}
 </body>
 </html>
 

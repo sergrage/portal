@@ -1,20 +1,31 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('sidebar')
+    @include('admin.partials.layout.sidebar')
+@endsection
 
-@section('content_header')
-    <h1>Список пользователей</h1>
-@stop
-@section('plugins.Datatables', true)
 @section('content')
- <!-- Page Heading -->
-<!--   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Список пользователей</h1>
-
-  </div> -->
-  <!-- Main content -->
-<!--   <div class="row"> -->
-    <table class="table table-bordered table-striped" id="myTable">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Пользователи сайта</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                            <li class="breadcrumb-item active">Отчеты</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+      <div class="content">
+      <table class="table table-striped table-bordered" style="width:100%" id="myTable">
       <thead>
       <tr>
         <th>ID</th>
@@ -32,7 +43,7 @@
           <td>{{$user->email}}</td>
           <td>
               @foreach($user->roles as $role)
-                  <span class="badge badge-success"> {{$role->name}}</span>
+                  <span class="badge badge-success"> {{$role->roleName}}</span>
               @endforeach
           </td>
 
@@ -43,21 +54,6 @@
       @endforeach
       </tboby>
     </table>
-<!--   </div> -->
-  <!-- /.content -->
-@stop
-
-@section('css')
-
-
-@stop
-
-@section('js')
-
-    <script>
-    $(document).ready( function () {
-    	$('#myTable').DataTable();
-        $('.select2').select2();
-	});
-	</script>
-@stop
+        </div>
+        </div>
+@endsection

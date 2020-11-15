@@ -1,7 +1,6 @@
 <div class="col-md-6">
     <div class="card">
         <div class="card-header">{{ __('Добавить нового пользователя') }}</div>
-
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -57,11 +56,12 @@
                 </div>
 
                 <div class="form-group row ">
-                      <label for="tagsSelect" class="col-md-4 col-form-label text-md-right">Выберите тэги</label>
+                    <label class="col-md-4 col-form-label text-md-right">Присвоить роль</label>
                     <div class="col-md-6 ">
-                      <select class="select2 form-control" name="roles[]" multiple="multiple" id="rolesSelect" style="width: 100%">
+                      <select class="select2 form-control" name="roles[]" multiple="multiple">
+                          <option></option>
                         @foreach($roles as $role)
-                          <option>{{ $role->name }}</option>
+                          <option>{{ $role->roleName }}</option>
                         @endforeach
                       </select>
                     </div>

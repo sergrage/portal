@@ -1,36 +1,40 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Панель администратора</h1>
-@stop
+@section('sidebar')
+    @include('admin.partials.layout.sidebar')
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-@include('admin.partials.userRegister')
-@include('admin.partials.addRole')
-	</div>
-</div>
-@stop
-
-
-
-@section('css')
-    <link href="{{ mix('admin/css/admin.css') }}" rel="stylesheet">
-@stop
-
-@section('js')
-    <script src="{{ mix('admin/js/admin.js') }}"></script>
-    <script>
-
-        $('.select2').select2({
-            placeholder: 'Select an option',
-            theme: "bootstrap",
-            width: 'resolve'
-        });
-
-    </script>
-
-@stop
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Ежедневный отчет</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                            <li class="breadcrumb-item active">Отчеты</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+            <div class="row">
+            @include('admin.partials.page.userRegister')
+            @include('admin.partials.page.addRole')
+            </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+@endsection

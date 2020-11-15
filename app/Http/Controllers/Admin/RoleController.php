@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\Role\CreateRequest;
+use App\Http\Requests\Role\UpdateRequest;
+
 use App\Models\Role;
+use App\Models\User;
 
 class RoleController extends Controller
 {
@@ -15,27 +19,33 @@ class RoleController extends Controller
     	return view('admin.roles.index', compact('roles'));
     }
 
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
 
-    	$role = Role::create([
-            'name'  =>  $request['name'],
+        $role = Role::create([
+            'roleName'  =>  $request['roleName'],
             'description'  =>  $request['description'],
        ]);
 
+        $roleAdmin = Role::where('roleName', 'admin')->first();
+        $users = $roleAdmin->users;
 
-    	return redirect()->route('administrator.roles.index');
+        foreach($users as $user ) {
+            $user->roles()->attach($role->id);
+        }
+        return redirect()->route('administrator.roles.index');
     }
 
-    public function show(Role $role)
+    public function edit(Role $role)
     {
-    	dd(123);
+        return view('admin.roles.edit', compact('role'));
     }
 
-    public function update(Request $request, Role $role)
+    public function update(UpdateRequest $request, Role $role)
     {
     	$role->update([
-            'name'  =>  $request['name'],
+            'roleName'  =>  $request['roleName'],
+            'description'  =>  $request['description'],
        ]);
 
     	return redirect()->route('administrator.roles.index');
