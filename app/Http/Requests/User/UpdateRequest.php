@@ -27,10 +27,9 @@ class UpdateRequest extends FormRequest
         return [
             'name'  =>  ['required',
                          'string',
-                         'alpha_dash',
                          'max:255',
-                         'min:6'
-                         
+                         'min:6'],
+
             'email' =>  ['required',
                          'email',
                          'string',

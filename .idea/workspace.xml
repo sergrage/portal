@@ -21,25 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="feaf5324-d8b0-4df9-8085-be7e2a2bf32e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RoleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RoleFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_14_134813_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_134813_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/css/adminlte.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/app/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/app/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/app/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/addRole.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/page/addRole.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/userRegister.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/page/userRegister.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/User/CreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/User/CreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/User/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/User/UpdateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/logo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,18 +176,18 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/app/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shmat\Desktop\OpenServer\domains\portal\resources\app\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shmat\Desktop\OpenServer\domains\portal\resources\views\admin\partials\page" />
       <recent name="C:\Users\shmat\Desktop\OpenServer\domains\portal\public\app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shmat\Desktop\OpenServer\domains\portal\resources\app\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,7 +207,10 @@
       <workItem from="1605285515419" duration="285000" />
       <workItem from="1605286035401" duration="4000000" />
       <workItem from="1605340991578" duration="25580000" />
-      <workItem from="1605435654221" duration="13698000" />
+      <workItem from="1605435654221" duration="14987000" />
+      <workItem from="1605467854282" duration="715000" />
+      <workItem from="1605503092900" duration="645000" />
+      <workItem from="1605525074837" duration="9582000" />
     </task>
     <servers />
   </component>
@@ -238,10 +230,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="480" y="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605357675362">
+    <state x="480" y="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605532027334">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="480" y="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1605357675362" />
+    <state x="480" y="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1605532027334" />
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1605507459311">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1605507459311" />
     <state x="805" y="512" key="NewPhpFileDialog" timestamp="1605344877322">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -250,6 +246,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="461" y="225" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1605448459095" />
+    <state x="616" y="270" key="run.anything.popup" timestamp="1605531244364">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="616" y="270" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1605531244364" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

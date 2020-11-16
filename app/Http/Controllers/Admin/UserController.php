@@ -28,7 +28,7 @@ class UserController extends Controller
             'email' =>  $request['email'],
             'password' => Hash::make($request['password']),
         ]);
-       
+
     	$user->roles()->sync($roles_id);
 
         return redirect()->route('administrator.users.index');
@@ -57,7 +57,7 @@ class UserController extends Controller
 	public function rolesIds(Request $request)
 	{
 		$roles_id = [];
-       
+
         if($request->input('roles')) {
             foreach($request->input('roles') as $roleName) {
 	           $role = Role::where('roleName', $roleName)->first();
@@ -66,4 +66,6 @@ class UserController extends Controller
         }
         return $roles_id;
 	}
+
+
 }
