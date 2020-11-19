@@ -21,6 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 */
 mix.copy('resources/app/webfonts', 'public/app/webfonts');
+mix.copy('resources/app/fonts', 'public/app/fonts');
 mix.copy('resources/app/img', 'public/app/img');
 
 

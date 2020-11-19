@@ -37,18 +37,22 @@
       </tr>
       </thead>
       <tbody>
-      @foreach($users as $user)
+         @foreach($users as $user)
         <tr>
           <td>{{$user->id}}</td>
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
           <td>
+              @if($user->isAdmin())
+                  <span class="badge badge-danger"> admin </span>
+                  @else
               @foreach($user->roles as $role)
                   <span class="badge badge-success"> {{$role->roleName}}</span>
               @endforeach
+                  @endif
           </td>
           <td>
-            @if($user->isAmin)
+            @if($user->isAdmin())
                 Действия невозможны
                 @else
                 <a href="{{route('administrator.users.edit', $user)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Изменить</a>
@@ -65,7 +69,12 @@
                     @csrf
 
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control">
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <button class="btn btn-primary" type="submit" style="margin-left:-5px;"><i class="fas fa-edit"></i></button>
                 </form>

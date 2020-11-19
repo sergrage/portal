@@ -28,6 +28,17 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
 
 });
 
+// Кабинет пользователя
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('cabinet')->group(function () {
+        Route::name('cabinet.')->group(function () {
+            Route::get('/', [App\Http\Controllers\App\CabinetController::class, 'index'])
+                ->name('cabinet');
+        });
+    });
+});
+
 
 Route::fallback(function() {
     abort(404);

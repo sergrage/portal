@@ -8,30 +8,29 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Role\CreateRequest;
 use App\Http\Requests\Role\UpdateRequest;
 
+use App\Services\Admin\RoleService;
+
 use App\Models\Role;
 use App\Models\User;
 
 class RoleController extends Controller
 {
+    protected $service;
+
+    function __construct(RoleService $service)
+    {
+        $this->service = $service;
+    }
+
     public function index()
     {
     	$roles = Role::all();
     	return view('admin.roles.index', compact('roles'));
     }
 
-    public function store(Request $request) {
+    public function store(CreateRequest $request) {
 
-        $role = Role::create([
-            'roleName'  =>  $request['roleName'],
-            'description'  =>  $request['description'],
-       ]);
-
-        $roleAdmin = Role::where('roleName', 'admin')->first();
-        $users = $roleAdmin->users;
-
-        foreach($users as $user ) {
-            $user->roles()->attach($role->id);
-        }
+        $this->service->createRole($request);
         return redirect()->route('administrator.roles.index');
     }
 
@@ -42,11 +41,7 @@ class RoleController extends Controller
 
     public function update(UpdateRequest $request, Role $role)
     {
-    	$role->update([
-            'roleName'  =>  $request['roleName'],
-            'description'  =>  $request['description'],
-       ]);
-
+        $this->service->createRole($request, $role);
     	return redirect()->route('administrator.roles.index');
     }
 

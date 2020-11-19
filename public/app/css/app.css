@@ -1,4 +1,32 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Regular.ttf?c1678b46f7dd3f50ceac94ed4e0ad01a) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Bold.ttf?8669b8706bbbdd1482e2fccc4ed96850) format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Light.ttf?81cd217e4a8160a930c6d5fb8d1e8e82) format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Italic.ttf?3d7cb86547ce5075625915f2e86d0687) format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -17045,5 +17073,9 @@ readers do not read off random characters that represent icons */
 .far {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
+}
+
+.select2-search__field {
+  width: auto !important;
 }
 

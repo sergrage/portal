@@ -7,9 +7,11 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route('app')}}" class="nav-link">Главная</a>
         </li>
+        @if(Auth::check())
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Контакты</a>
+            <a href="{{route('cabinet.cabinet')}}" class="nav-link">Кабинет</a>
         </li>
+        @endif
     </ul>
 
     <!-- SEARCH FORM -->
@@ -97,12 +99,16 @@
                     {{ __('  Админка') }} <i class="fas fa-unlock"></i>
                 </a>
                 @endif
+                <a class="dropdown-item" href="{{ route('cabinet.cabinet') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                   {{ __('Кабинет') }}
+                </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();">
                     {{ __('Выйти') }}
                 </a>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>

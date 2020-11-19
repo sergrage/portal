@@ -44,4 +44,8 @@ class User extends Authenticatable
         return $this->roles->pluck('roleName')->contains('admin');
     }
 
+    function hasRole($role) {
+        return $this->roles->pluck('roleName')->contains($role);
+    }
+
 }

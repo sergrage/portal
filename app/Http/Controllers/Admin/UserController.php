@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\Admin\UserService;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
@@ -13,29 +14,26 @@ use App\Http\Requests\User\UpdateRequest;
 
 class UserController extends Controller
 {
-        public function index()
+    protected $service;
+
+    function __construct(UserService $service)
     {
-    	$users = User::all();
+        $this->service = $service;
+    }
+
+    public function index()
+    {
+    	$users = User::with('roles')->get();
     	return view('admin.users.index', compact('users'));
     }
 
     public function store (CreateRequest $request)
     {
-    	$roles_id = $this->rolesIds($request);
-
-    	$user = User::create([
-            'name'  =>  $request['name'],
-            'email' =>  $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
-
-    	$user->roles()->sync($roles_id);
-
+    	$this->service->createUser($request);
         return redirect()->route('administrator.users.index');
     }
 
     public function edit(User $user)
-
     {
     	$roles = Role::all();
     	return view('admin.users.edit', compact('user', 'roles'));
@@ -43,8 +41,7 @@ class UserController extends Controller
 
     public function update(UpdateRequest $request, User $user)
     {
-        $user->update($request->only(['name', 'email']));
-        $user->roles()->sync($this->rolesIds($request));
+        $this->service->updateUser($request, $user);
         return redirect()->route('administrator.users.index');
     }
 
@@ -53,19 +50,4 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('administrator.users.index');
     }
-
-	public function rolesIds(Request $request)
-	{
-		$roles_id = [];
-
-        if($request->input('roles')) {
-            foreach($request->input('roles') as $roleName) {
-	           $role = Role::where('roleName', $roleName)->first();
-	           $roles_id[] = $role->id;
-            }
-        }
-        return $roles_id;
-	}
-
-
 }
