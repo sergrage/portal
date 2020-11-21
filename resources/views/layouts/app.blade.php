@@ -12,9 +12,11 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/jpeg">
     <!-- app css -->
-    <link rel="stylesheet" href="/app/css/app.css">
+    <link href="{{ mix('/app/css/app.css') }}" rel="stylesheet">
+{{--    <link rel="stylesheet" href="/app/css/app.css">--}}
     <!-- adminlte -->
-    <link rel="stylesheet" href="/app/css/adminlte.css">
+    <link href="{{ mix('/app/css/adminlte.css') }}" rel="stylesheet">
+{{--    <link rel="stylesheet" href="/app/css/adminlte.css">--}}
     <!-- IonIcons -->
 {{--    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">--}}
 
@@ -61,7 +63,9 @@
 </div>
 <!-- ./wrapper -->
 <!-- REQUIRED SCRIPTS -->
-<script src="/app/js/app.js"></script>
+
+{{--<script src="/app/js/app.js"></script>--}}
+<script src="{{ mix('/app/js/app.js') }}"></script>
 <!-- OPTIONAL SCRIPTS -->
 {{--<script src="plugins/chart.js/Chart.min.js"></script>--}}
 {{--<script src="dist/js/demo.js"></script>--}}
