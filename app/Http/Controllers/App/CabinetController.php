@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CabinetController extends Controller
 {
-    function index() {
+    public function index() {
         return view('app.cabinet.index');
     }
 }

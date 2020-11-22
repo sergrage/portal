@@ -28,8 +28,7 @@
         <div class="content">
             <div class="container-fluid">
             <div class="row">
-            @include('admin.partials.page.userRegister')
-            @include('admin.partials.page.addRole')
+            <h1>Тут пока пусто</h1>
             </div>
             </div>
             <!-- /.container-fluid -->

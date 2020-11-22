@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'account',
+        'lastLogin_at'
     ];
 
     /**
@@ -34,6 +35,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $dates = ['lastLogin_at'];
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
@@ -41,7 +44,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->roles->pluck('roleName')->contains('admin');
+        return $this->roles->pluck('roleName')->contains('gKRL-Adm-Techportal');
     }
 
     function hasRole($role) {

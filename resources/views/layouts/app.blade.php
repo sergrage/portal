@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Шматовский Сергей">
-    <title>"ТГК-1 - технологический сайт"</title>
+    <title>ТГК-1 - технологический сайт</title>
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/jpeg">

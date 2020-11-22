@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use LdapRecord\Container;
+use LdapRecord\Connection;
+
+
 class HomeController extends Controller
 {
     /**
@@ -25,4 +29,5 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+
 }
