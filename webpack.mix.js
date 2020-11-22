@@ -1,4 +1,14 @@
 const mix = require('laravel-mix');
+
+/*
+ |--------------------------------------------------------------------------
+ | Vue Components
+ |--------------------------------------------------------------------------
+ |
+ */
+
+mix.js('resources/vue/app.js', 'public/vue/js').version();
+
 /*
  |--------------------------------------------------------------------------
  | ADMIN LTE APP
@@ -16,10 +26,7 @@ mix.sass('resources/app/sass/app.scss', 'public/app/css/app.css')
         'resources/app/js/adminlte.js',
         'resources/app/js/app.js'
     ], 'public/app/js/app.js').version();
-/*
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
-*/
+
 mix.copy('resources/app/webfonts', 'public/app/webfonts');
 mix.copy('resources/app/fonts', 'public/app/fonts');
 mix.copy('resources/app/img', 'public/app/img');
@@ -45,7 +52,6 @@ mix.copy('resources/app/img', 'public/app/img');
 // ], 'public/admin/js/admin.js').version();
 
 /*
-
 mix.styles([
     'resources/admin/css/select2.css',
 ] , 'public/admin/css/admin.css')
@@ -56,5 +62,4 @@ mix.styles([
         'resources/admin/js/select2.full.js',
         'resources/admin/js/admin.js'
     ], 'public/admin/js/admin.js').version();
-
 */

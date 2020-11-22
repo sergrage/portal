@@ -57,7 +57,7 @@
         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> - Технологический сайт ПАО 'ТГК-1' филиала 'Карельский'</p>
         <a href="#">Создатель сайта: С.А. Шматовский</a>
         <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 0.1.0
+            <b>Version</b> 0.2.0
         </div>
     </footer>
 </div>
@@ -66,6 +66,7 @@
 
 {{--<script src="/app/js/app.js"></script>--}}
 <script src="{{ mix('/app/js/app.js') }}"></script>
+<script src="{{ mix('/vue/js/app.js') }}"></script>
 <!-- OPTIONAL SCRIPTS -->
 {{--<script src="plugins/chart.js/Chart.min.js"></script>--}}
 {{--<script src="dist/js/demo.js"></script>--}}

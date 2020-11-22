@@ -99,9 +99,7 @@
                     {{ __('  Админка') }} <i class="fas fa-unlock"></i>
                 </a>
                 @endif
-                <a class="dropdown-item" href="{{ route('cabinet.cabinet') }}"
-                   onclick="event.preventDefault();
-                   document.getElementById('logout-form').submit();">
+                <a class="dropdown-item" href="{{ route('cabinet.cabinet') }}">
                    {{ __('Кабинет') }}
                 </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"

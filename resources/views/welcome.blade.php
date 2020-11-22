@@ -28,6 +28,9 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
+     <div id="app">
+         <example-component></example-component>
+     </div>
 
 {{--        <div class="content">--}}
 {{--            <div class="container-fluid">--}}

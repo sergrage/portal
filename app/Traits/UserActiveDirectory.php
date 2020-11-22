@@ -23,6 +23,7 @@ trait UserActiveDirectory {
     // проверк, есть ли User в АД
     public function userIsInActiveDirectory(Request $request, $connection)
     {
+
         $userActiveDirectoryName = $this->prepareUserName($request['accountName']);
         $userActiveDirectoryPassword = $request['activeDirectoryPassword'];
         $userActiveDirectoryAccount = $connection->
@@ -50,6 +51,7 @@ trait UserActiveDirectory {
         if(!$userGroups) {
             return redirect()->route('app')->with('accountName', 'Вы не имеете доступа к порталу');
         }
+
         //  тут проверить есть юзер в БД сайта
         $userExist = $this->userExistInDatabase($userActiveDirectoryName);
 
@@ -61,6 +63,7 @@ trait UserActiveDirectory {
             $request['email'] = $userExist->email;
             $request['password'] = $userExist->email;
         } else {
+
             $newUser = $this->createNewUser($userFullName, $userActiveDirectoryName, $userPassword, $userEmail, $userGroups);
             $request['email'] = $newUser->email;
             $request['password'] = $newUser->email;
@@ -120,6 +123,8 @@ trait UserActiveDirectory {
     }
 
     public function userExistInDatabase($account) {
-        return User::where('account', $account)->firstOrfail();
+        $user = User::where('account', $account)->first();
+
+        return $user;
     }
 }

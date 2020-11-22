@@ -1,4 +1,3 @@
-$(document).ready( function () {
     $('#myTable').DataTable({
         "language": {
             "processing": "Подождите...",
@@ -29,4 +28,4 @@ $(document).ready( function () {
         theme: "classic",
         allowClear: true
     });
-} );
+

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTestRepostMigration extends Migration
+class CreateTestParsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTestRepostMigration extends Migration
      */
     public function up()
     {
-        Schema::create('test_repost_migration', function (Blueprint $table) {
+        Schema::create('testpars', function (Blueprint $table) {
             $table->id();
+            $table->float('par');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateTestRepostMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test_repost_migration');
+        Schema::dropIfExists('testpars');
     }
 }

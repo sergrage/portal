@@ -12703,7 +12703,6 @@ a("<li>",{"class":C.sPageButton+" "+k,id:0===A&&"string"===typeof g?f.sTableId+"
 })));
 //# sourceMappingURL=adminlte.js.map
 
-$(document).ready( function () {
     $('#myTable').DataTable({
         "language": {
             "processing": "Подождите...",
@@ -12734,4 +12733,4 @@ $(document).ready( function () {
         theme: "classic",
         allowClear: true
     });
-} );
+
