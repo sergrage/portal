@@ -40,17 +40,7 @@
                 <td>{{$role->roleName}}</td>
                 <td>{{$role->description}}</td>
                 <td>
-                    @if($role->roleName == 'admin')
-                        Действия невозможны
-                    @else
                     <a href="{{route('administrator.roles.edit', $role)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Изменить</a>
-                    <form class="d-inline-block pl-3" method="POST" action="{{ route('administrator.roles.destroy', $role) }}">
-                       @csrf
-                       @method('DELETE')
-                       <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Удалить</button>
-                   </form>
-                    @endif
-
                 </td>
             </tr>
             @endforeach

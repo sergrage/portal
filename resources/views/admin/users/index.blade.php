@@ -32,8 +32,7 @@
         <th>Имя</th>
         <th>E-mail</th>
         <th>Роль</th>
-        <th>Управление</th>
-        <th>Смена пароля</th>
+        <th>Последне посещение</th>
       </tr>
       </thead>
       <tbody>
@@ -43,45 +42,14 @@
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
           <td>
-              @if($user->isAdmin())
-                  <span class="badge badge-danger"> admin </span>
-                  @else
               @foreach($user->roles as $role)
                   <span class="badge badge-success"> {{$role->roleName}}</span>
               @endforeach
-                  @endif
           </td>
-          <td>
-            @if($user->isAdmin())
-                Действия невозможны
-                @else
-                <a href="{{route('administrator.users.edit', $user)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Изменить</a>
-                <form class="d-inline-block pl-3" method="POST" action="{{ route('administrator.users.destroy', $role) }}">
-                   @csrf
-                   @method('DELETE')
-                   <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Удалить</button>
-                </form>
-            @endif
-
-          </td>
-            <td>
-                <form action="{{ route('administrator.users.updatePassword', $user) }}" method="POST" class="form-inline">
-                    @csrf
-
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <button class="btn btn-primary" type="submit" style="margin-left:-5px;"><i class="fas fa-edit"></i></button>
-                </form>
-            </td>
+           <td>{{$user->lastLogin_at}} </td>
         </tr>
       @endforeach
-      </tboby>
+      </tbody>
     </table>
 </div>
 </div>

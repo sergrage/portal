@@ -12,7 +12,7 @@ use App\Http\Requests\User\ChangePasswordRequest;
 
 class UserPasswordController extends Controller
 {
-    function update(ChangePasswordRequest $request, User $user) {
+    public function update(ChangePasswordRequest $request, User $user) {
 
         $password = Hash::make($request['password']);
 

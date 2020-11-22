@@ -18,17 +18,6 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Роль') }}</label>
-                                        <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control @error('roleName') is-invalid @enderror" name="roleName" value="{{$role->roleName}}" required autocomplete="name" autofocus>
-                                            @error('roleName')
-                                            <span class="invalid-feedback" role="alert">
-                                                  <strong>{{ $message }}</strong>
-                                             </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Описание') }}</label>
                                         <div class="col-md-6">
                                             <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ $role->description }}">{{ $role->description }}</textarea>
