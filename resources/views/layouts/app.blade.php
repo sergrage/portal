@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Шматовский Сергей">
     <title>ТГК-1 - технологический сайт</title>
-
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/jpeg">
     <!-- app css -->
@@ -31,7 +30,6 @@
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar elevation-4 sidebar-light-primary">
-        <!-- Brand Logo -->
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -51,15 +49,7 @@
     </aside>
 
     @yield('content')
-
-<!-- Main Footer -->
-    <footer class="main-footer">
-        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> - Технологический сайт ПАО 'ТГК-1' филиала 'Карельский'</p>
-        <a href="#">Создатель сайта: С.А. Шматовский</a>
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 0.2.0
-        </div>
-    </footer>
+    @include('app.partials.footer')
 </div>
 <!-- ./wrapper -->
 <!-- REQUIRED SCRIPTS -->
@@ -73,4 +63,5 @@
 {{--<script src="dist/js/pages/dashboard3.js"></script>--}}
 </body>
 </html>
+
 

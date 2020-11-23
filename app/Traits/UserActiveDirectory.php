@@ -88,7 +88,7 @@ trait UserActiveDirectory {
                 $group = mb_substr($group, 0, $firstCommaPosition);
                 $userTechportalGroups[] = $group;
             }
-        };
+        }
         return $userTechportalGroups;
     }
 
@@ -123,8 +123,6 @@ trait UserActiveDirectory {
     }
 
     public function userExistInDatabase($account) {
-        $user = User::where('account', $account)->first();
-
-        return $user;
+         return User::where('account', $account)->first();
     }
 }
