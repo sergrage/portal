@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use LdapRecord\Container;
-use LdapRecord\Connection;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,56 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome');
+    }
+
+    public function weather(){
+//        return 123;
+
+//        $response = Http::withHeaders([
+//            'X-Gismeteo-Token' => '56b30cb255.3443075'
+//        ])->get('https://api.gismeteo.net/v2/weather/current/?latitude=54.35&longitude=52.52');
+//
+//        return $response;
+
+        $response = Http::get('http://api.openweathermap.org/data/2.5/weather', [
+            'units' => 'metric',
+            'lat' => 64.42937146965284,
+            'lon' => 34.47563982643993,
+            'appid' => env('OPEN_WEATHER_API')
+        ]);
+
+        dd($response->json());
+    }
+
+    public function dbTest() {
+
+        $users = DB::connection('sqlsrv');
+
+        $sql = "
+    DECLARE @dt1 date;
+    DECLARE @dt2 date;
+    SET @dt1 = DATEADD(day,-1,GETDATE());
+    SET @dt2 = GETDATE();
+    EXEC OIK.dbo.StepLT
+        @Cat = ?,
+        @Ids = ?,
+        @Start = @dt1,
+        @Stop = @dt2
+";
+        $params = array("Л", "4151");
+        $stmt = $users->select( $sql, $params);
+
+        $time = Arr::pluck($stmt, 'timeLt');
+
+        $timeCarbone = [];
+
+        foreach($time as $t) {
+            $timeCarbone[] = Carbon::create($t);
+        }
+
+        $temp = Arr::pluck($stmt, 'value', 'timeLt');
+
+        dd($timeCarbone);
     }
 
 }
