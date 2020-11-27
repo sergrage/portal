@@ -30,7 +30,7 @@
         <!-- Main content -->
      <div id="app">
          <example-component></example-component>
-         {{phpinfo()}}
+
      </div>
 
 {{--        <div class="content">--}}

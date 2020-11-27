@@ -4620,18 +4620,6 @@
         },
         {
             "name": "tightenco/collect",
-<<<<<<< HEAD
-            "version": "v8.14.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tighten/collect.git",
-                "reference": "8f79c602c872afd7c9371e193d6aa4ed13e97661"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tighten/collect/zipball/8f79c602c872afd7c9371e193d6aa4ed13e97661",
-                "reference": "8f79c602c872afd7c9371e193d6aa4ed13e97661",
-=======
             "version": "v8.15.0",
             "source": {
                 "type": "git",
@@ -4642,7 +4630,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/tighten/collect/zipball/e63b331f3709d6c278faf14cd859cd8f44a8d4a6",
                 "reference": "e63b331f3709d6c278faf14cd859cd8f44a8d4a6",
->>>>>>> ldap
                 "shasum": ""
             },
             "require": {
@@ -4679,11 +4666,7 @@
                 "collection",
                 "laravel"
             ],
-<<<<<<< HEAD
-            "time": "2020-11-16T18:55:11+00:00"
-=======
             "time": "2020-11-20T22:56:01+00:00"
->>>>>>> ldap
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
