@@ -25,6 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('command:getTemperature')->hourly();
+//        $schedule->command('command:getTemperature')->cron('* 0-23 * * *');
     }
 
     /**

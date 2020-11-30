@@ -2,45 +2,64 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview menu-open">
-
-            <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                    Отчеты
-                    <i class="right fas fa-angle-left"></i>
-                </p>
+        <li class="nav-header">ПАРАМЕТРЫ</li>
+        <li class="nav-item">
+            <a href="{{ route('temperature') }}" class="nav-link {{ request()->is('temperature') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-thermometer-half"></i>
+                <p>Температура</p>
             </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Ежедневный отчет</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Месячный отчет</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="./index3.html" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Текущие ремонты</p>
-                    </a>
-                </li>
-            </ul>
-{{--        </li>--}}
+        </li>
+{{--        <li class="nav-header">ОТЧЕТЫ</li>--}}
 {{--        <li class="nav-item">--}}
-{{--            <a href="pages/widgets.html" class="nav-link">--}}
-{{--                <i class="nav-icon fas fa-th"></i>--}}
-{{--                <p>--}}
-{{--                    Widgets--}}
-{{--                    <span class="right badge badge-danger">New</span>--}}
-{{--                </p>--}}
+{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
+{{--                <i class="nav-icon fas fa-file"></i>--}}
+{{--                <p>Ежедневный отчет</p>--}}
 {{--            </a>--}}
 {{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
+{{--                <i class="nav-icon fas fa-file"></i>--}}
+{{--                <p>Ежедневный отчет</p>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
+{{--                <i class="nav-icon fas fa-file"></i>--}}
+{{--                <p>Ежедневный отчет</p>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+
+{{--        <li class="nav-item has-treeview menu-open">--}}
+
+{{--            <a href="#" class="nav-link active">--}}
+{{--                <i class="nav-icon fas fa-tachometer-alt"></i>--}}
+{{--                <p>--}}
+{{--                    Отчеты--}}
+{{--                    <i class="right fas fa-angle-left"></i>--}}
+{{--                </p>--}}
+{{--            </a>--}}
+{{--            <ul class="nav nav-treeview">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a href="./index.html" class="nav-link">--}}
+{{--                        <i class="far fa-circle nav-icon"></i>--}}
+{{--                        <p>Ежедневный отчет</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a href="./index2.html" class="nav-link">--}}
+{{--                        <i class="far fa-circle nav-icon"></i>--}}
+{{--                        <p>Месячный отчет</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a href="./index3.html" class="nav-link active">--}}
+{{--                        <i class="far fa-circle nav-icon"></i>--}}
+{{--                        <p>Текущие ремонты</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
+
 {{--        <li class="nav-item has-treeview">--}}
 {{--            <a href="#" class="nav-link">--}}
 {{--                <i class="nav-icon fas fa-copy"></i>--}}

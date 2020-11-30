@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
 
+use App\Models\CK\Temperature;
+
 class HomeController extends Controller
 {
     /**
@@ -29,6 +31,23 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome');
+    }
+
+    public function temperature() {
+
+        $temperatures = Temperature::whereDate('created_at', Carbon::today())->get();
+
+        if($temperatures->isNotEmpty()) {
+            $tLen = $temperatures->count(); // значимых строчек
+            $tLen2 = intval($temperatures->first()->created_at->format('H')); // строчек до
+            $tLen3 = 24 - $tLen2  - $tLen; // строчек после
+        } else {
+            $temperatures = [];
+            $tLen = 0; // значимых строчек
+            $tLen2 = 24; // строчек до
+            $tLen3 = 0; // строчек после
+        }
+        return view('app.temperatures.index', compact('temperatures', 'tLen', 'tLen2', 'tLen3'));
     }
 
     public function weather(){

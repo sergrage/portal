@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
 Route::get('/weather', [App\Http\Controllers\HomeController::class, 'weather'])->name('weather');
 Route::get('/db', [App\Http\Controllers\HomeController::class, 'dbTest'])->name('db');
+Route::get('/temperature', [App\Http\Controllers\HomeController::class, 'temperature'])->name('temperature');
 
 
 //Auth::routes(['register' => false]);
