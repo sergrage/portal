@@ -33,6 +33,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+
     @include('app.partials.logo')
        <!-- Sidebar user panel (optional) -->
        @guest

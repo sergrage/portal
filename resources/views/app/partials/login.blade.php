@@ -2,7 +2,7 @@
     @csrf
     <div class="form-group">
         <div class="">
-            <input id="email" type="text" placeholder="Введит имя аккаунта" class="form-control form-control-sm @error('accountName') is-invalid @enderror" name="accountName" value="{{ old('accountName') }}" required>
+            <input id="email" type="text" placeholder="Введите имя аккаунта" class="form-control form-control-sm @error('accountName') is-invalid @enderror" name="accountName" value="{{ old('accountName') }}" required>
             @if (session('accountName'))
                  <small class="text-danger form-text">{{ session('accountName') }}</small>
             @endif

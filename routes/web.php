@@ -1,12 +1,23 @@
 <?php
 
+use App\Models\CK\Pbr;
+use App\Models\CK\Power;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+
+
+
+
+
+Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power']);
+
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
 Route::get('/weather', [App\Http\Controllers\HomeController::class, 'weather'])->name('weather');
 Route::get('/db', [App\Http\Controllers\HomeController::class, 'dbTest'])->name('db');
 Route::get('/temperature', [App\Http\Controllers\HomeController::class, 'temperature'])->name('temperature');
-
+Route::get('/power', [App\Http\Controllers\App\PowerController::class, 'index'])->name('power');
 
 //Auth::routes(['register' => false]);
 

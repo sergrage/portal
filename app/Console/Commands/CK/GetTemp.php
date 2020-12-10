@@ -110,7 +110,6 @@ class GetTemp extends Command
             'tec13' =>  -100,
             'status' => false
             ]);
-
             return 0;
         }
 
@@ -130,7 +129,6 @@ class GetTemp extends Command
             'tec13' => $idValueArray[13],
             'status' =>  $this->getStatus($temperatures)
         ]);
-
         return 1;
     }
 
@@ -147,13 +145,7 @@ class GetTemp extends Command
         foreach($temperatureData as $t) {
            $id = $t->id; // 1880
             $key = array_search($id, $tempArray);  // 1
-//            if($t->QC == '256') {
-//                $keyValue[$key] = $t->value;
-//            } else {
-//                $keyValue[$key] = -100;
-//            }
             $keyValue[$key] = $t->QC == '256' ? $t->value : -100;
-
         }
         return $keyValue;
     }

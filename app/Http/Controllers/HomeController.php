@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CK\Pbr;
+use App\Models\CK\Power;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Http;
@@ -23,11 +25,6 @@ class HomeController extends Controller
 //        $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('welcome');
@@ -98,6 +95,11 @@ class HomeController extends Controller
         $temp = Arr::pluck($stmt, 'value', 'timeLt');
 
         dd($timeCarbone);
+    }
+
+
+    public function power() {
+        return view('test' );
     }
 
 }

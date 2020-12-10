@@ -12,9 +12,13 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-12 pt-5">
-                     <h1 class="pb-5">Температура на объектах</h1>
-                        <table class="table table-striped">
+                    <div class="col-sm-6">
+                        <h1 class="mt-3 text-dark font-weight-bold">Температура на объектах филиала</h1>
+                    </div>
+                    <div class="col-sm-6">
+                         @include('app.partials.date')
+                    </div>
+                    <table class="table table-striped table-sm">
                             <thead>
                             <tr>
                                 <th scope="col">Время</th>
@@ -88,8 +92,6 @@
                             @endif
                              </tbody>
                         </table>
-
-                    </div>
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>

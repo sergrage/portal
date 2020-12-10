@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -13,20 +12,119 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Ежедневный отчет</h1>
+                        <h1 class="mt-3 text-dark font-weight-bold">Технологический сайт филиала "Карельский"</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                            <li class="breadcrumb-item active">Отчеты</li>
-                        </ol>
+                        @include('app.partials.date')
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
 
         <!-- /.content-header -->
+     <div class="container">
+         <div class="row">
+             <div class="col-6">
+                 <img src="test2.svg" alt="" style="width:1200px;">
+             </div>
+             <div class="col-6">
+                 <h2 class="pb-5">Основные параметры филиала</h2>
+                 <div class="info-box">
+                     <span class="info-box-icon bg-info"><i class="fas fa-charging-station"></i></span>
+                     <div class="info-box-content">
+                         <span class="info-box-text">Установленная электрическая мощность</span>
+                         <span class="info-box-number">833,7 МВт</span>
+                     </div>
+                     <!-- /.info-box-content -->
+                 </div>
+                 <div class="info-box">
+                     <span class="info-box-icon bg-warning"><i class="fas fa-fire-alt text-white"></i></span>
+                     <div class="info-box-content">
+                         <span class="info-box-text">Установленная тепловая мощность</span>
+                         <span class="info-box-number">733 Гкал/ч</span>
+                     </div>
+                     <!-- /.info-box-content -->
+                 </div>
+                 <div class="info-box">
+                     <span class="info-box-icon bg-primary"><i class="fas fa-bolt"></i></span>
+                     <div class="info-box-content">
+                         <span class="info-box-text">Выработка электрической энергии</span>
+                         <span class="info-box-number">3 697,8 млн КВт•ч</span>
+                     </div>
+                     <!-- /.info-box-content -->
+                 </div>
+                 <div class="info-box">
+                     <span class="info-box-icon bg-danger"><i class="fas fa-temperature-high"></i></span>
+                     <div class="info-box-content">
+                         <span class="info-box-text">Отпуск тепловой энергии</span>
+                         <span class="info-box-number">1 691,4 тыс. Гкал</span>
+                     </div>
+                     <!-- /.info-box-content -->
+                 </div>
+                 <table class="table table-sm">
+                     <thead>
+                     <tr>
+                         <th scope="col">Станция</th>
+{{--                         <th scope="col">Ввод в эксплуатацию</th>--}}
+                         <th scope="col">Электрическая мощность</th>
+{{--                         <th scope="col">Тепловая мощность</th>--}}
+                         <th scope="col">Выработка ЭЭ</th>
+{{--                         <th scope="col">Выработка тепловой энергии</th>--}}
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                         <td>Петрозаводская ТЭЦ</td>
+{{--                         <td>1976</td>--}}
+                         <td>280 МВт</td>
+{{--                         <td>689 Гкал/ч</td>--}}
+                         <td>1 251,372 млн кВтч</td>
+{{--                         <td>1 653,767 тыс. Гкал</td>--}}
+                     </tr>
+                     <tr>
+                         <td>Каскад Выгских ГЭС</td>
+{{--                         <td>1956</td>--}}
+                         <td>160 МВт</td>
+{{--                         <td>-</td>--}}
+                         <td>917,259 млн кВтч</td>
+{{--                         <td>-</td>--}}
+                     </tr>
+                     <tr>
+                         <td>Каскад Кемских ГЭС</td>
+{{--                         <td>1967</td>--}}
+                         <td>330 МВт</td>
+{{--                         <td>-</td>--}}
+                         <td>1267,172 млн кВтч</td>
+{{--                         <td>-</td>--}}
+                     </tr>
+                     <tr>
+                         <td>Каскад Сунских ГЭС</td>
+{{--                         <td>1964</td>--}}
+                         <td>63,7 МВт</td>
+{{--                         <td>-</td>--}}
+                         <td>262,045 млн кВтч</td>
+{{--                         <td>-</td>--}}
+                     </tr>
+                     </tbody>
+                     <thead>
+                     <tr>
+                         <th scope="col"></th>
+                         <th scope="col">Тепловая мощность</th>
+                         <th scope="col">Выработка ТЭ</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                         <td>Петрозаводская ТЭЦ</td>
+                         <td>689 Гкал/ч</td>
+                         <td>1 653,767 тыс. Гкал</td>
+                     </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
 
+     </div>
         <!-- Main content -->
      <div id="app">
 {{--         <example-component></example-component>--}}

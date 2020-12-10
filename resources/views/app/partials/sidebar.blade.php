@@ -2,11 +2,17 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-header">ПАРАМЕТРЫ</li>
+        <li class="nav-header font-weight-bold">ПАРАМЕТРЫ</li>
         <li class="nav-item">
             <a href="{{ route('temperature') }}" class="nav-link {{ request()->is('temperature') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-thermometer-half"></i>
+                <i class="nav-icon fas fa-thermometer-half {{ request()->is('temperature') ? 'text-white' : '' }}" style="color: #007bff;"></i>
                 <p>Температура</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('power') }}" class="nav-link {{ request()->is('power') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-bolt {{ request()->is('power') ? 'text-white' : '' }}" style="color: #007bff;"></i>
+                <p>Генерация</p>
             </a>
         </li>
 {{--        <li class="nav-header">ОТЧЕТЫ</li>--}}
