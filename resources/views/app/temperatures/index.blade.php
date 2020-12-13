@@ -18,9 +18,9 @@
                     <div class="col-sm-6">
                          @include('app.partials.date')
                     </div>
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-sm table-bordered">
                             <thead>
-                            <tr>
+                            <tr align="center">
                                 <th scope="col">Время</th>
                                 <th scope="col">ГЭС-1</th>
                                 <th scope="col">ГЭС-2</th>
@@ -35,7 +35,7 @@
                                 <th scope="col">ТЭЦ-13</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-center">
                             @if($tLen2)
                                 @for ($i = 0; $i < $tLen2; $i++)
                                     <tr>

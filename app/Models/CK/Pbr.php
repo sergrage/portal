@@ -23,4 +23,11 @@ class Pbr extends Model
         'tec13',
         'status'
     ];
+
+    public function returnData($ges) {
+        if($this->$ges == -100) {
+            return '###';
+        }
+        return $this->$ges;
+    }
 }

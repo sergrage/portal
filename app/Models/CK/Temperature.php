@@ -34,6 +34,4 @@ class Temperature extends Model
         return $this->$ges;
     }
 
-
-
 }

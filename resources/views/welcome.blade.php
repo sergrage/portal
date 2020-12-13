@@ -25,7 +25,7 @@
      <div class="container">
          <div class="row">
              <div class="col-6">
-                 <img src="test2.svg" alt="" style="width:1200px;">
+                 <img src="app/img/map.svg" alt="" class="" style="height: 100%;  width: 100% \9">
              </div>
              <div class="col-6">
                  <h2 class="pb-5">Основные параметры филиала</h2>

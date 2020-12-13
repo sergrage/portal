@@ -68,7 +68,7 @@ class GetPbr extends Command
         ];
 
         $now = Carbon::now('Europe/Moscow')->format('Ymd');
-        $conn = DB::connection('sqlsrv');
+
         $sql = "
             EXEC OIK.dbo.SrezLT
             @Cat = ?,
@@ -79,6 +79,7 @@ class GetPbr extends Command
         for($count = 0; $count <24; $count++) {
             try{
                 $hour = $this->createHour($count);
+                $conn = DB::connection('sqlsrv');
                 $pbr = $conn->select($sql, ["Л", $this->gesIdString($gesArray), $now.' '. $hour .':00:00']);
 
                 Pbr::create([

@@ -1,0 +1,31 @@
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Петя</td>
+            <td>we@qwe.ru</td>
+        </tr>
+        <tr>
+            <td>Петя</td>
+            <td>we@qwe.ru</td>
+        </tr>
+        <tr>
+            <td>Петя</td>
+            <td>we@qwe.ru</td>
+        </tr>
+        <tr>
+            <td>Петя</td>
+            <td>we@qwe.ru</td>
+        </tr>
+        <tr>
+            <td>Петя</td>
+            <td>we@qwe.ru</td>
+        </tr>
+
+    </tbody>
+</table>

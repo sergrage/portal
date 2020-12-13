@@ -20,81 +20,11 @@
                         <h1 class="mt-3 text-dark font-weight-bold">Генерация электростанций филиала "Карельский"</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        <a href="/power-pdf" class="btn btn-primary mt-3">Скачать в формате PDF</a>
+                        <a id="createPDFbutton" href="/power-pdf" class="btn mt-3 text-white" style="background:#ff0000;" data-toggle="modal" data-target="#exampleModal"> <i class="far fa-file-pdf" ></i>   Скачать PDF</a>
+                        <a href="power-excel" class="btn text-white mt-3" style="background:#1D6F42;"> <i class="far fa-file-excel"></i>   Скачать Excel</a>
                         @include('app.partials.date')
                     </div><!-- /.col -->
-                    <table class="table table-striped table-sm table-bordered">
-                        <thead>
-                        <tr align="center">
-                            <th scope="col">Время</th>
-                            <th scope="col" colspan="2">ГЭС-1</th>
-                            <th scope="col" colspan="2">ГЭС-2</th>
-                            <th scope="col" colspan="2">ГЭС-3</th>
-                            <th scope="col" colspan="2">ГЭС-5</th>
-                            <th scope="col" colspan="2">ГЭС-6</th>
-                            <th scope="col" colspan="2">ГЭС-7</th>
-                            <th scope="col" colspan="2">ГЭС-9</th>
-                            <th scope="col" colspan="2">ГЭС-10</th>
-                            <th scope="col" colspan="2">ГЭС-14</th>
-                            <th scope="col" colspan="2">ГЭС-16</th>
-                            <th scope="col" colspan="2">ТЭЦ-13</th>
-                        </tr>
-                        </thead>
-                        <tbody class="text-center">
-                        <tr>
-                            <td></td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange" >ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                            <td>ПБР</td>
-                            <td class="orange">ОИК</td>
-                        </tr>
-                        @foreach($result as $r)
-                            <tr class="center">
-                                <th scope="row"></th>
-                                <td>{{$r[0]->ges1}}</td>
-                                <td class="orange">{{$r[1]->ges1}}</td>
-                                <td>{{$r[0]->ges2}}</td>
-                                <td class="orange">{{$r[1]->ges2}}</td>
-                                <td>{{$r[0]->ges3}}</td>
-                                <td class="orange">{{$r[1]->ges3}}</td>
-                                <td>{{$r[0]->ges5}}</td>
-                                <td class="orange">{{$r[1]->ges5}}</td>
-                                <td>{{$r[0]->ges6}}</td>
-                                <td class="orange">{{$r[1]->ges6}}</td>
-                                <td>{{$r[0]->ges7}}</td>
-                                <td class="orange">{{$r[1]->ges7}}</td>
-                                <td>{{$r[0]->ges9}}</td>
-                                <td class="orange">{{$r[1]->ges9}}</td>
-                                <td>{{$r[0]->ges10}}</td>
-                                <td class="orange">{{$r[1]->ges10}}</td>
-                                <td>{{$r[0]->ges14}}</td>
-                                <td class="orange">{{$r[1]->ges14}}</td>
-                                <td>{{$r[0]->ges16}}</td>
-                                <td class="orange">{{$r[1]->ges16}}</td>
-                                <td>{{$r[1]->tec13}}</td>
-                                <td class="orange">{{$r[1]->tec13}}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                    @include('app.partials.powerTable')
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
@@ -109,5 +39,37 @@
     </div>
     <!-- /.content-wrapper -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="app/img/Spinner-1s-200px.svg" alt="">
+                    <h4>Подождите несколько секунд, файл генерируется</h4>
+                    <p>Скачивание начнется автоматически</p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 
+@section('javascript')
+    <script>
+        var token = document.head.querySelector('meta[name="csrf-token"]');
+        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+        $( "#createPDFbutton" ).click(function() {
+            axios.get('/power-pdf', {responseType: 'blob'}).then((response)=>{
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'remaining_fee.pdf'); //or any other extension
+                document.body.appendChild(link);
+                link.click();
+                $('.modal').modal('hide');
+            }).catch((error)=>{
+                console.log(error.response.data)
+            });
+        });
+    </script>
 @endsection
