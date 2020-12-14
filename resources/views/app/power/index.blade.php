@@ -69,7 +69,7 @@
         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 
         $( "#createPDFbutton" ).click(function() {
-            axios.get('/power-pdf', {responseType: 'blob'}).then((response)=>{
+            axios.get('{{route('createPowerPdf')}}', {responseType: 'blob'}).then((response)=>{
                 const url = window.URL.createObjectURL(new Blob([response.data]));
                 const link = document.createElement('a');
                 link.href = url;

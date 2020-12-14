@@ -5,7 +5,7 @@ use App\Models\CK\Power;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power']);
+Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power'])->name('createPowerPdf');
 Route::get('/power-excel', [App\Http\Controllers\Excel\PowerController::class, 'export']);
 
 
