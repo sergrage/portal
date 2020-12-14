@@ -68,33 +68,18 @@ class HomeController extends Controller
 
     public function dbTest() {
 
-        $users = DB::connection('sqlsrv');
-
+        $conn = DB::connection('sqlsrv');
+        $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
         $sql = "
-    DECLARE @dt1 date;
-    DECLARE @dt2 date;
-    SET @dt1 = DATEADD(day,-1,GETDATE());
-    SET @dt2 = GETDATE();
-    EXEC OIK.dbo.StepLT
+    EXEC OIK.dbo.SrezLT
         @Cat = ?,
         @Ids = ?,
-        @Start = @dt1,
-        @Stop = @dt2
+        @Time = '". $now . "'
 ";
-        $params = array("Л", "4151");
-        $stmt = $users->select( $sql, $params);
+        $params = array("Л", "49", $now);
+        $stmt = $conn->select( $sql, $params);
 
-        $time = Arr::pluck($stmt, 'timeLt');
-
-        $timeCarbone = [];
-
-        foreach($time as $t) {
-            $timeCarbone[] = Carbon::create($t);
-        }
-
-        $temp = Arr::pluck($stmt, 'value', 'timeLt');
-
-        dd($timeCarbone);
+        dd($stmt);
     }
 
 
