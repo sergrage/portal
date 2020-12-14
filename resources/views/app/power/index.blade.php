@@ -16,12 +16,22 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <h1 class="mt-3 text-dark font-weight-bold">Генерация электростанций филиала "Карельский"</h1>
                     </div><!-- /.col -->
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <a id="createPDFbutton" href="/power-pdf" class="btn mt-3 text-white" style="background:#ff0000;" data-toggle="modal" data-target="#exampleModal"> <i class="far fa-file-pdf" ></i>   Скачать PDF</a>
                         <a href="power-excel" class="btn text-white mt-3" style="background:#1D6F42;"> <i class="far fa-file-excel"></i>   Скачать Excel</a>
+                        <form class="form-inline d-inline-block" style="padding-left: 1rem;margin-top: 0rem;line-height: 11px;vertical-align: bottom;">
+                            <div class="form-group d-inline-block" style="margin-right: -3px;">
+                                <input data-toggle="datepicker" class="form-control">
+                            </div>
+                            <div class="input-group-append d-inline-block">
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </form>
                         @include('app.partials.date')
                     </div><!-- /.col -->
                     @include('app.partials.powerTable')
@@ -71,5 +81,31 @@
                 console.log(error.response.data)
             });
         });
+
+        $.fn.datepicker.languages['ru-RU'] = {
+            days: ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресеньк'],
+            daysShort: [ 'Вс', 'Пн' ,'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            daysMin: [  'Вс', 'Пн' ,'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            weekStart: 1,
+            startView: 0,
+            yearFirst: true,
+            yearSuffix: 'г'
+        };
+
+        let datePicker = $('[data-toggle="datepicker"]');
+
+        datePicker.datepicker({
+            autoPick: true,
+            autoHide: true,
+            language: 'ru-RU',
+            format: 'yyyy-mm-dd'
+        });
+
+        datePicker.on('pick.datepicker', function (e) {
+            console.log(datePicker.datepicker('getDate', true))
+        });
+
     </script>
 @endsection

@@ -10,7 +10,6 @@
     "require": {
         "php": "^7.3",
         "barryvdh/laravel-dompdf": "^0.8.7",
-        "consoletvs/charts": "7.*",
         "directorytree/ldaprecord-laravel": "^1.7",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",

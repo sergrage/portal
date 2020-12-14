@@ -15,7 +15,10 @@ mix.js('resources/vue/app.js', 'public/vue/js').version();
  |--------------------------------------------------------------------------
 */
 mix.sass('resources/app/sass/app.scss', 'public/app/css/app.css')
-    .styles(['resources/app/css/adminlte.css', 'resources/app/css/dataTables.bootstrap4.min.css', 'resources/app/css/select2.min.css'],
+    .styles(['resources/app/css/adminlte.css',
+            'resources/app/css/dataTables.bootstrap4.min.css',
+            'resources/app/css/select2.min.css',
+            'resources/app/css/datepicker.min.css'],
         'public/app/css/adminlte.css')
     .scripts([
         'resources/app/js/jquery.js',
@@ -23,6 +26,7 @@ mix.sass('resources/app/sass/app.scss', 'public/app/css/app.css')
         'resources/app/js/jquery.dataTables.min.js',
         'resources/app/js/dataTables.bootstrap4.min.js',
         'resources/app/js/select2.full.min.js',
+        'resources/app/js/datepicker.min.js',
         'resources/app/js/adminlte.js',
         'resources/app/js/app.js'
     ], 'public/app/js/app.js').version();
