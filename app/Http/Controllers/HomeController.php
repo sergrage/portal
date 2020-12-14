@@ -87,4 +87,8 @@ class HomeController extends Controller
         return view('test' );
     }
 
+    public function phpinfo(){
+        return view(' phpinfo' );
+    }
+
 }

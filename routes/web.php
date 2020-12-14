@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power'])->name('createPowerPdf');
 Route::get('/power-excel', [App\Http\Controllers\Excel\PowerController::class, 'export']);
 
+Route::get('/phpinfo', [App\Http\Controllers\HomeController::class, 'phpinfo']);
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
