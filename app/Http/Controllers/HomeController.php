@@ -34,17 +34,67 @@ class HomeController extends Controller
 
         $temperatures = Temperature::whereDate('created_at', Carbon::today())->get();
 
-        if($temperatures->isNotEmpty()) {
-            $tLen = $temperatures->count(); // значимых строчек
-            $tLen2 = intval($temperatures->first()->created_at->format('H')); // строчек до
-            $tLen3 = 24 - $tLen2  - $tLen; // строчек после
-        } else {
-            $temperatures = [];
-            $tLen = 0; // значимых строчек
-            $tLen2 = 24; // строчек до
-            $tLen3 = 0; // строчек после
+        if($temperatures->isEmpty()) {
+            for($i=0; $i< 24 ; $i++) {
+                $p = new Temperature;
+                $p->ges1 = '###';
+                $p->ges2 = '###';
+                $p->ges3 = '###';
+                $p->ges5 = '###';
+                $p->ges6 = '###';
+                $p->ges7 = '###';
+                $p->ges9 = '###';
+                $p->ges10 = '###';
+                $p->ges14 = '###';
+                $p->ges16 = '###';
+                $p->tec13 = '###';
+                $temperatures->push($p);
+            }
+        } elseif($temperatures->count() !== 24) {
+            $last = intval($temperatures->last()->created_at->format('H'));
+            $first = intval($temperatures->first()->created_at->format('H'));
+
+            for($i=$last; $i< 23 ; $i++) {
+                $p = new Temperature;
+                $p->ges1 = '###';
+                $p->ges2 = '###';
+                $p->ges3 = '###';
+                $p->ges5 = '###';
+                $p->ges6 = '###';
+                $p->ges7 = '###';
+                $p->ges9 = '###';
+                $p->ges10 = '###';
+                $p->ges14 = '###';
+                $p->ges16 = '###';
+                $p->tec13 = '###';
+
+                $temperatures->push($p);
+            }
+
+            for($i=0; $i < $first ; $i++) {
+                $p = new Temperature;
+                $p->ges1 = '###';
+                $p->ges2 = '###';
+                $p->ges3 = '###';
+                $p->ges5 = '###';
+                $p->ges6 = '###';
+                $p->ges7 = '###';
+                $p->ges9 = '###';
+                $p->ges10 = '###';
+                $p->ges14 = '###';
+                $p->ges16 = '###';
+                $p->tec13 = '###';
+
+                $temperatures->prepend($p);
+            }
         }
-        return view('app.temperatures.index', compact('temperatures', 'tLen', 'tLen2', 'tLen3'));
+        $result = [];
+        for($i=0;  $i< 24 ; $i++) {
+            $result[] = $temperatures[$i];
+        }
+
+
+        return view('app.temperatures.index', compact('result' ));
     }
 
     public function weather(){

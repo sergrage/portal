@@ -177,7 +177,7 @@ return [
         App\Providers\TodayDateServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
     ],
 
     /*

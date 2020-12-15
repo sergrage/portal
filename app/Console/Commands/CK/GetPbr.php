@@ -91,8 +91,8 @@ class GetPbr extends Command
                     'ges7' => $pbr[5]->value,
                     'ges9' => $pbr[6]->value,
                     'ges10' => $pbr[7]->value,
-                    'ges14' => $pbr[8]->value,
-                    'tec13' => $pbr[9]->value,
+                    'ges14' => $pbr[9]->value,
+                    'tec13' => $pbr[8]->value,
                     'ges16' => $pbr[10]->value,
                     'status' =>  $this->getStatus($pbr)
                 ]);

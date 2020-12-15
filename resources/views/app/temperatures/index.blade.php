@@ -36,27 +36,9 @@
                             </tr>
                             </thead>
                             <tbody class="text-center">
-                            @if($tLen2)
-                                @for ($i = 0; $i < $tLen2; $i++)
-                                    <tr>
-                                        <th scope="row">{{$i}}:00</th>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                @endfor
-                            @endif
-                            @foreach($temperatures as $t)
-                            <tr>
-                                <th scope="row">{{$t->createTimeHour()}}</th>
+                                @foreach ($result as $t)
+                                <tr>
+                                    <th scope="row">{{$loop->index}}:00</th>
                                 <td>{{$t->returnData('ges1')}}</td>
                                 <td>{{$t->returnData('ges2')}}</td>
                                 <td>{{$t->returnData('ges3')}}</td>
@@ -69,27 +51,7 @@
                                 <td>{{$t->returnData('ges16')}}</td>
                                 <td>{{$t->returnData('tec13')}}</td>
                             </tr>
-                                 <p class="d-none">{{$loopLen =  $loop->count}}</p>
                             @endforeach
-                            @if($tLen3 )
-                                <p class="d-none">{{$loopAfter = 23 - $loopLen}}</p>
-                                @for ($i = 0; $i < $tLen3 ; $i++)
-                                    <tr>
-                                        <th scope="row">{{$tLen + $tLen2  +$i}}:00</th>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                @endfor
-                            @endif
                              </tbody>
                         </table>
                 </div><!-- /.row -->

@@ -72,18 +72,6 @@ class GetTemp extends Command
         $conn = DB::connection('sqlsrv');
         $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
 
-        $sql1 = "
-            DECLARE @dt1 date;
-            DECLARE @dt2 date;
-            SET @dt = '".$now."'".";
-            SET @dt = '".$now."'".";
-            EXEC OIK.dbo.StepLT
-            @Cat = ?,
-            @Ids = ?,
-            @Start = @dt1,
-            @Stop = @dt2
-        ";
-
         $sql = "
             EXEC OIK.dbo.SrezLT
             @Cat = ?,

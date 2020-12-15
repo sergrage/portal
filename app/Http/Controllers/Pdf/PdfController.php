@@ -18,7 +18,7 @@ class PdfController extends Controller
     public function power(){
 
         $result = $this->service->powerData();
-        $pdf = PDF::loadView('pdf.power', compact('result'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('pdf.power', compact('result'))->setPaper('a3', 'landscape');
         return $pdf->download('invoice.pdf');
 
 

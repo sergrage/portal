@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "arcanedev/log-viewer": "8.x",
         "barryvdh/laravel-dompdf": "^0.8.7",
         "directorytree/ldaprecord-laravel": "^1.7",
         "fideloper/proxy": "^4.2",

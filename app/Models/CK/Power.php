@@ -31,6 +31,6 @@ class Power extends Model
         if($this->$ges == -100) {
             return '###';
         }
-        return $this->$ges;
+        return round($this->$ges, 1);
     }
 }

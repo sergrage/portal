@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\CK\Pbr;
-use App\Models\CK\Power;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power'])->name('createPowerPdf');
@@ -29,6 +26,8 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
         Route::name('administrator.')->group(function () {
             Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])
             ->name('dashboard');
+            Route::get('/phpinfo', [App\Http\Controllers\Admin\DashboardController::class, 'phpinfo'])
+            ->name('phpinfo');
             Route::resources([
 			'users' => App\Http\Controllers\Admin\UserController::class,
 			'roles' => App\Http\Controllers\Admin\RoleController::class,

@@ -13,4 +13,8 @@ class DashboardController extends Controller
     	$roles = Role::all();
     	return view('admin.admin', compact('roles'));
     }
+
+    public function phpinfo() {
+        return view('admin.phpinfo.phpinfo');
+    }
 }

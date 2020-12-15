@@ -16,9 +16,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('administrator.roles.index')}}" class="nav-link">
-                        <i class="fas fa-chart-bar nav-icon"></i>
-                        <p>Отчеты</p>
+                    <a href="{{route('administrator.phpinfo')}}" class="nav-link">
+                        <i class="fas fa-info-circle nav-icon"></i>
+                        <p>PHPInfo</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/log-viewer" class="nav-link">
+                        <i class="fas fa-cogs nav-icon"></i>
+                        <p>LogViewer</p>
                     </a>
                 </li>
             </ul>
