@@ -3,7 +3,8 @@
 namespace App\Console\Commands\CK;
 
 use Illuminate\Console\Command;
-use App\Services\CK\CKService;
+use App\Services\CK\SrezService;
+use App\Models\CK\Power;
 
 class GetPower extends Command
 {
@@ -28,7 +29,7 @@ class GetPower extends Command
      *
      * @return void
      */
-    public function __construct(CKService $service)
+    public function __construct(SrezService $service)
     {
         parent::__construct();
         $this->service = $service;
@@ -41,7 +42,11 @@ class GetPower extends Command
      */
     public function handle()
     {
-        $this->service->power();
+         return $this->service
+             ->getParameters(Power::class,
+             ['49', '61','79','123','141','153','31','171','189','213','7'],
+             '67108864',
+             "Л");
     }
 
 }

@@ -9,8 +9,8 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class PowerController extends Controller
 {
-    public function export()
+    public function export($date = null)
     {
-        return Excel::download(new PowerExport, 'invoices.xlsx');
+        return Excel::download(new PowerExport($date), 'invoices.xlsx');
     }
 }

@@ -12,10 +12,19 @@ use Maatwebsite\Excel\Concerns\FromView;
 
 class PowerExport implements FromView
 {
+    private $date;
+
+    public function __construct($date){
+        $this->date = $date;
+    }
 
     public function view(): View
     {
-          $pbrs = Pbr::whereDate('created_at', Carbon::today())->get();
+        $dateForPowerRequest =  $this->date ?
+            Carbon::createFromFormat('Y-m-d', $this->date, 'Europe/Moscow') :
+            Carbon::today();
+
+        $pbrs = Pbr::whereDate('created_at', $dateForPowerRequest)->get();
 
         if($pbrs->isEmpty()) {
             for($i=0; $i< 24 ; $i++) {
@@ -35,12 +44,7 @@ class PowerExport implements FromView
             }
         }
 
-        if($pbrs->pluck('status')->contains('0'))
-        {
-
-        }
-
-        $powers = Power::whereDate('created_at', Carbon::today())->get();
+        $powers = Power::whereDate('created_at', $dateForPowerRequest)->get();
 
         if( $powers->count() == 0) {
             for($i=0; $i< 24 ; $i++) {

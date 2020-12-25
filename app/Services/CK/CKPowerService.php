@@ -10,8 +10,13 @@ use Carbon\Carbon;
 
 class CKPowerService {
 
-    public function powerData() {
-        $pbrs = Pbr::whereDate('created_at', Carbon::today())->get();
+    public function powerData($date = null) {
+
+        $dateForPowerRequest = $date ?
+            Carbon::createFromFormat('Y-m-d', $date, 'Europe/Moscow') :
+            Carbon::today();
+
+        $pbrs = Pbr::whereDate('created_at', $dateForPowerRequest)->get();
 
         if($pbrs->isEmpty()) {
             for($i=0; $i< 24 ; $i++) {
@@ -36,7 +41,7 @@ class CKPowerService {
 
         }
 
-        $powers = Power::whereDate('created_at', Carbon::today())->get();
+        $powers = Power::whereDate('created_at', $dateForPowerRequest)->get();
 
         if( $powers->count() == 0) {
             for($i=0; $i< 24 ; $i++) {

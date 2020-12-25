@@ -2,22 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power'])->name('createPowerPdf');
-Route::get('/power-excel', [App\Http\Controllers\Excel\PowerController::class, 'export']);
-
-Route::get('/phpinfo', [App\Http\Controllers\HomeController::class, 'phpinfo']);
-
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
+
 Route::get('/weather', [App\Http\Controllers\HomeController::class, 'weather'])->name('weather');
-Route::get('/db', [App\Http\Controllers\HomeController::class, 'dbTest'])->name('db');
-Route::get('/temperature', [App\Http\Controllers\HomeController::class, 'temperature'])->name('temperature');
+
+// Параметры
+Route::get('/temperature', [App\Http\Controllers\App\TemperatureController::class, 'index'])->name('temperature');
 Route::get('/power', [App\Http\Controllers\App\PowerController::class, 'index'])->name('power');
 
-//Auth::routes(['register' => false]);
+// Аунтификация
 
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+// Экспорт данных
+Route::get('/power-pdf', [App\Http\Controllers\Pdf\PdfController::class, 'power'])->name('createPowerPdf');
+Route::get('/power-excel/{date?}', [App\Http\Controllers\Excel\PowerController::class, 'export']);
 
 // Страница Админки
 
@@ -28,11 +28,12 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
             ->name('dashboard');
             Route::get('/phpinfo', [App\Http\Controllers\Admin\DashboardController::class, 'phpinfo'])
             ->name('phpinfo');
+            Route::get('/dbTest', [App\Http\Controllers\Admin\DashboardController::class, 'dbTest'])
+                ->name('dbTest');
             Route::resources([
 			'users' => App\Http\Controllers\Admin\UserController::class,
 			'roles' => App\Http\Controllers\Admin\RoleController::class,
-		]);
-
+		    ]);
         });
     });
 

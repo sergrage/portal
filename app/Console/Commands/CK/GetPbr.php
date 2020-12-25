@@ -41,6 +41,8 @@ class GetPbr extends Command
      */
     public function handle()
     {
+        $this->deleteIfExists();
+
         $ges1Id = '4410';
         $ges2Id = '4422';
         $ges3Id = '4434';
@@ -140,4 +142,8 @@ class GetPbr extends Command
         }
         return true;
     }
+
+    public function deleteIfExists(){
+        Pbr::whereDate('created_at', Carbon::today())->delete();
+     }
 }

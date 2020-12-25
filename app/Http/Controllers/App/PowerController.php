@@ -4,7 +4,7 @@ namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use App\Services\CK\CKPowerService;
-
+use Illuminate\Http\Request;
 
 class PowerController extends Controller
 {
@@ -15,10 +15,18 @@ class PowerController extends Controller
         $this->service = $service;
     }
 
-    public function index() {
+    public function index(Request $request) {
 
-        $result = $this->service->powerData();
-
-        return view('app.power.index', compact('result'));
+        return view('app.power.index');
     }
-}
+
+    public function power(Request $request) {
+
+        $date = $request->get('dateTo');
+
+        $result = $this->service->powerData($date);
+
+        return response()->json(['result' => $result, 'date' => $date , 'state' => 200]);
+    }
+
+ }

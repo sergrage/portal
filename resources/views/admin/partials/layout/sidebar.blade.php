@@ -27,6 +27,12 @@
                         <p>LogViewer</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('administrator.dbTest')}}" class="nav-link">
+                        <i class="fas fa-database nav-icon"></i>
+                        <p>dbTest</p>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item has-treeview menu-open">
