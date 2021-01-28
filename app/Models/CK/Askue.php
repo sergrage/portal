@@ -24,4 +24,11 @@ class Askue extends Model
         'mges',
         'status'
     ];
+
+    public function returnData($ges) {
+        if($this->$ges == -100) {
+            return '###';
+        }
+        return round($this->$ges, 1);
+    }
 }
