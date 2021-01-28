@@ -106,7 +106,7 @@ class SrezService {
             foreach($data as $d) {
                 if($d->id == $value) {
                     if(in_array($d->QC, $goodStatus)){
-                        $result[$key] =  $d->value;
+                        $result[$key] =  round($d->value, 1);
                     } else {
                         $result[$key] =  '-100';
                         $status = false;
