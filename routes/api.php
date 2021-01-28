@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/power-json', [App\Http\Controllers\App\PowerController::class, 'power']);
+Route::get('/temperature-json', [App\Http\Controllers\App\TemperatureController::class, 'temperature']);

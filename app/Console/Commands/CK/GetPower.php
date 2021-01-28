@@ -5,6 +5,7 @@ namespace App\Console\Commands\CK;
 use Illuminate\Console\Command;
 use App\Services\CK\SrezService;
 use App\Models\CK\Power;
+use Illuminate\Support\Facades\Artisan;
 
 class GetPower extends Command
 {
@@ -42,11 +43,15 @@ class GetPower extends Command
      */
     public function handle()
     {
-         return $this->service
-             ->getParameters(Power::class,
-             ['49', '61','79','123','141','153','31','171','189','213','7'],
-             '67108864',
-             "Л");
+         // обновляем ПБР
+         Artisan::call('command:getPbr');
+
+        return $this->service
+            ->getParameters(Power::class,
+                ['ges1'=> '49', 'ges2'=>'61','ges3'=>'79',
+                    'ges5'=>'123','ges6'=>'141','ges7'=>'153',
+                    'ges9'=>'31','ges10'=>'171','ges14'=>'189',
+                    'ges16'=>'213','tec13'=>'7'], ['67108864'],"Л");
     }
 
 }

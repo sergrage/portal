@@ -30,6 +30,7 @@ class Kernel extends ConsoleKernel
 //        $schedule->command('command:getPower')->cron('* 0-23 * * *');
 
         $schedule->command('command:getPbr')->cron('30 0 * * *');
+        $schedule->command('command:getAskue')->cron('55 * * * *');
 //        $schedule->command('command:getPower')->cron('5 * * * *');
     }
 

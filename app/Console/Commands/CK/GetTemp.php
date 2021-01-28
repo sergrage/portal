@@ -11,39 +11,20 @@ class GetTemp extends Command
 {
     protected $service;
 
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'command:getTemperature';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Выгружает из ОИК СК-2007 значения температуры по всем станциям';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct(SrezService $service)
     {
         parent::__construct();
         $this->service = $service;
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-
-      public function handle() {
-         return $this->service->getParameters(Temperature::class, ['6671', '7155','8598','5154','5529','6037','1225','1721','2601','2981','596'], '256', "I");
+    public function handle() {
+         return $this->service->getParameters(Temperature::class,
+             ['ges1'=>'6671', 'ges2'=>'7155','ges3'=>'8598',
+              'ges5'=>'5154','ges6'=>'5529', 'ges7'=>'6037',
+              'ges9'=>'1225','ges10'=>'1721','ges14'=>'2601',
+              'ges16'=>'2981','tec13'=>'596'], ['256'], "I");
       }
-
 }

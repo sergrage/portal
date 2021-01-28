@@ -2018,10 +2018,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     power: function power() {
-      return this.$store.state.powerData;
+      return this.$store.state.tableData;
     },
     date: function date() {
       return this.$store.state.dateForRequest;
@@ -2092,6 +2116,66 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component safepdf-component.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    temperature: function temperature() {
+      return this.$store.state.tableData;
+    },
+    date: function date() {
+      return this.$store.state.dateForRequest;
+    }
   }
 });
 
@@ -5208,45 +5292,69 @@ var render = function() {
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges1))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges1))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges2))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges2))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges2))]),
               _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges3))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges3))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges3))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges5))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges5))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges5))]),
               _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges6))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges6))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges6))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges7))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges7))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges7))]),
               _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges9))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges9))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges9))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges10))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges10))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges10))]),
               _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges14))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges14))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges14))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].ges16))]),
               _vm._v(" "),
               _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].ges16))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].ges16))]),
+              _vm._v(" "),
               _c("td", { staticClass: "blue" }, [_vm._v(_vm._s(p[0].tec13))]),
               _vm._v(" "),
-              _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].tec13))])
+              _c("td", { staticClass: "orange" }, [_vm._v(_vm._s(p[1].tec13))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].tec13))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(p[2].mges))])
             ])
           })
         ],
@@ -5264,27 +5372,29 @@ var staticRenderFns = [
       _c("tr", { attrs: { align: "center" } }, [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Время")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-1")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-1")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-2")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-2")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-3")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-3")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-5")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-5")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-6")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-6")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-7")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-7")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-9")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-9")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-10")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-10")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-14")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-14")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-16")]),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-16")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ТЭЦ-13")])
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ТЭЦ-13")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("МГЭС")])
       ])
     ])
   },
@@ -5299,45 +5409,69 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
-      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _c("td", [_vm._v("КУ")]),
       _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
-      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _c("td", [_vm._v("КУ")]),
       _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
-      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _c("td", [_vm._v("КУ")]),
       _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
-      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _c("td", [_vm._v("КУ")]),
       _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
       _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
       _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
       _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
       _vm._v(" "),
-      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")])
+      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "blue" }, [_vm._v("ПБР")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "orange" }, [_vm._v("ОИК")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("КУ")])
     ])
   }
 ]
@@ -5414,6 +5548,104 @@ var render = function() {
   )
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "table",
+    { staticClass: "table table-striped table-sm table-bordered" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        { staticClass: "text-center" },
+        _vm._l(_vm.temperature, function(t, index) {
+          return _c("tr", { staticClass: "center" }, [
+            _c("th", { attrs: { scope: "row" } }, [
+              _vm._v(_vm._s(index) + ":00")
+            ]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges1))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges2))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges3))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges5))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges6))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges7))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges9))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges10))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges14))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.ges16))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(t.tec13))])
+          ])
+        }),
+        0
+      )
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { attrs: { align: "center" } }, [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Время")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-1")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-2")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-3")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-5")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-6")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-7")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-9")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-10")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-14")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ГЭС-16")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ТЭЦ-13")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -22728,11 +22960,13 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('safepdf-component', __webpack_require__(/*! ./components/SaveAsPdfComponent.vue */ "./resources/vue/components/SaveAsPdfComponent.vue")["default"]);
 Vue.component('safeexcel-component', __webpack_require__(/*! ./components/SaveAsExcelComponent.vue */ "./resources/vue/components/SaveAsExcelComponent.vue")["default"]);
 Vue.component('power-component', __webpack_require__(/*! ./components/PowerComponent.vue */ "./resources/vue/components/PowerComponent.vue")["default"]);
+Vue.component('temperature-component', __webpack_require__(/*! ./components/TemperatureComponent.vue */ "./resources/vue/components/TemperatureComponent.vue")["default"]);
 Vue.component('datepicker-component', __webpack_require__(/*! ./components/DatePickerComponent.vue */ "./resources/vue/components/DatePickerComponent.vue")["default"]);
 var app = new Vue({
   el: '#app',
   store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
-  mounted: function mounted() {
+  created: function created() {
+    this.$store.commit('setCurrentUrl', window.location.pathname);
     this.$store.dispatch("getDataFromServer", null);
   }
 });
@@ -23077,6 +23311,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/vue/components/TemperatureComponent.vue":
+/*!***********************************************************!*\
+  !*** ./resources/vue/components/TemperatureComponent.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemperatureComponent.vue?vue&type=template&id=1f0135d1& */ "./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1&");
+/* harmony import */ var _TemperatureComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TemperatureComponent.vue?vue&type=script&lang=js& */ "./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TemperatureComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/components/TemperatureComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TemperatureComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TemperatureComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/components/TemperatureComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TemperatureComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1&":
+/*!******************************************************************************************!*\
+  !*** ./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TemperatureComponent.vue?vue&type=template&id=1f0135d1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/components/TemperatureComponent.vue?vue&type=template&id=1f0135d1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TemperatureComponent_vue_vue_type_template_id_1f0135d1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/vue/store/index.js":
 /*!**************************************!*\
   !*** ./resources/vue/store/index.js ***!
@@ -23094,17 +23397,18 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    powerData: [],
-    dateForRequest: ''
+    tableData: [],
+    dateForRequest: '',
+    url: ''
   },
   actions: {
     getDataFromServer: function getDataFromServer(context, payload) {
-      axios.get('api/power-json', {
+      axios.get(this.getters.apiLink, {
         params: {
           dateTo: payload
         }
       }).then(function (response) {
-        context.commit('changePowerData', response.data.result);
+        context.commit('changeData', response.data.result);
       });
     },
     createPdfFile: function createPdfFile(context, payload) {
@@ -23134,14 +23438,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     downloadLinkExcel: function downloadLinkExcel(state) {
       return state.dateForRequest ? "/power-excel/" + state.dateForRequest : "/power-excel";
+    },
+    apiLink: function apiLink(state) {
+      return 'api' + state.url + '-json';
     }
   },
   mutations: {
-    changePowerData: function changePowerData(state, payload) {
-      state.powerData = payload;
+    changeData: function changeData(state, payload) {
+      state.tableData = payload;
     },
     changeTimeDate: function changeTimeDate(state, payload) {
       state.dateForRequest = payload;
+    },
+    setCurrentUrl: function setCurrentUrl(state, payload) {
+      state.url = payload;
     }
   }
 }));
