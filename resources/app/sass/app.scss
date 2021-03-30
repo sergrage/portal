@@ -1,0 +1,29 @@
+// Fonts
+@import 'fonts';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//fontawesome-free
+
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+
+
+.select2-search__field {
+    width: auto !important;
+}
+
+    .orange {
+        background-color: #ffcc99;
+    }
+
+    .blue {
+        background-color: #6382b4;
+        color: #ffffff;
+    }
