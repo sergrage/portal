@@ -39,7 +39,7 @@
                 <fuel-component></fuel-component>
             </div>
             <div class="col-6">
-                <img src="app/img/map.svg" alt="" class="" style="width: 90%">
+                <img src="app/img/map.svg?{{time()}}" alt="" class="" style="width: 90%">
             </div>
             <div class="col-6">
                 <h4>Генерация электростанций Филиала "Карельский"</h3>
