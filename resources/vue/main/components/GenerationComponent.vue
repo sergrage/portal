@@ -16,7 +16,7 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <th>Кондопожская ГЭС</th>
+                        <th>Кондопожская ГЭС (ГЭС-1)</th>
                         <td>{{ generation.ges1 }}</td>
                         <td>{{ generation.ges1Pbr}}</td>
                         <td>{{ delta( generation.ges1, generation.ges1Pbr)}}</td>
@@ -40,7 +40,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr>
-                        <th>Пальеозерская ГЭС</th>
+                        <th>Пальеозерская ГЭС (ГЭС-2)</th>
                         <td>{{ generation.ges2 }}</td>
                         <td>{{ generation.ges2Pbr}}</td>
                         <td>{{ delta( generation.ges2, generation.ges2Pbr)}}</td>
@@ -64,7 +64,7 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <th>Маткожненская ГЭС</th>
+                        <th>Маткожненская ГЭС (ГЭС-3)</th>
                         <td>{{ generation.ges3 }}</td>
                         <td>{{ generation.ges3Pbr}}</td>
                         <td>{{ delta( generation.ges3, generation.ges3Pbr) }}</td>
@@ -88,7 +88,7 @@
                         <td>-</td>
                     </tr> --> 
                     <tr>
-                        <th>Выгостровская ГЭС</th>
+                        <th>Выгостровская ГЭС (ГЭС-5)</th>
                         <td>{{ generation.ges5 }}</td>
                         <td>{{ generation.ges5Pbr}}</td>
                         <td>{{ delta( generation.ges5, generation.ges5Pbr) }}</td>
@@ -106,7 +106,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr>
-                        <th>Беломорская ГЭС</th>
+                        <th>Беломорская ГЭС (ГЭС-6)</th>
                         <td>{{ generation.ges6 }}</td>
                         <td>{{ generation.ges6Pbr}}</td>
                         <td>{{ delta( generation.ges6, generation.ges6Pbr) }}</td>
@@ -130,7 +130,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr>
-                        <th>Палакоргская ГЭС</th>
+                        <th>Палакоргская ГЭС (ГЭС-7)</th>
                         <td>{{ generation.ges7 }}</td>
                         <td>{{ generation.ges7Pbr}}</td>
                         <td>{{ delta( generation.ges7, generation.ges7Pbr) }}</td>
@@ -160,7 +160,7 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <th>Путкинская ГЭС</th>
+                        <th>Путкинская ГЭС (ГЭС-9)</th>
                         <td>{{ generation.ges9 }}</td>
                         <td>{{ generation.ges9Pbr}}</td>
                         <td>{{ delta( generation.ges9, generation.ges9Pbr) }}</td>
@@ -184,7 +184,7 @@
                         <td>-</td>
                     </tr> -->
                     <tr>
-                        <th>Подужемская ГЭС</th>
+                        <th>Подужемская ГЭС (ГЭС-10)</th>
                         <td>{{ generation.ges10 }}</td>
                         <td>{{ generation.ges10Pbr}}</td>
                         <td>{{ delta( generation.ges10, generation.ges10Pbr) }}</td>
@@ -202,7 +202,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr>
-                        <th>Кривопорожская ГЭС</th>
+                        <th>Кривопорожская ГЭС (ГЭС-14)</th>
                         <td>{{ generation.ges14 }}</td>
                         <td>{{ generation.ges14Pbr}}</td>
                         <td>{{ delta( generation.ges14, generation.ges14Pbr)}}</td>
@@ -232,7 +232,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr>
-                        <th>Юшкозерская ГЭС</th>
+                        <th>Юшкозерская ГЭС (ГЭС-16)</th>
                         <td>{{ generation.ges16 }}</td>
                         <td>{{ generation.ges16Pbr}}</td>
                         <td>{{ delta( generation.ges16, generation.ges16Pbr)}}</td>
@@ -250,7 +250,7 @@
                         <td>-</td>
                     </tr>  -->
                     <tr style="background: #ffebcd;">
-                        <th> Петрозаводская ТЭЦ</th>
+                        <th> Петрозаводская ТЭЦ (ПТЭЦ-13)</th>
                         <td>{{ generation.tec13 }}</td>
                         <td>{{ generation.tec13Pbr}}</td>
                         <td>{{ delta(generation.tec13, generation.tec13Pbr)}}</td>

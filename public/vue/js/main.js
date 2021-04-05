@@ -4690,14 +4690,21 @@ var staticRenderFns = [
             },
             [
               _c("th", { attrs: { scope: "col" } }, [
-                _vm._v("Фактический объем")
+                _vm._v("Фактический запас")
               ]),
               _vm._v(" "),
               _c("th", { attrs: { scope: "col" } }, [
-                _vm._v("Нормативный объем")
+                _vm._v("Нормативный запас")
               ]),
               _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Мертвый объем")]),
+              _c(
+                "th",
+                {
+                  staticStyle: { background: "#000" },
+                  attrs: { scope: "col" }
+                },
+                [_vm._v("Мертвый остаток")]
+              ),
               _vm._v(" "),
               _c("th", { attrs: { scope: "col" } }, [_vm._v("Рабочий объем")])
             ]
@@ -4706,13 +4713,13 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("tbody", { staticClass: "text-center" }, [
           _c("tr", [
-            _c("td", [_vm._v("1000")]),
+            _c("td", [_vm._v("-----")]),
             _vm._v(" "),
-            _c("td", [_vm._v("1010")]),
+            _c("td", [_vm._v("-----")]),
             _vm._v(" "),
-            _c("td", [_vm._v("30")]),
+            _c("td", [_vm._v("-----")]),
             _vm._v(" "),
-            _c("td", [_vm._v("900")])
+            _c("td", [_vm._v("-----")])
           ])
         ])
       ]
@@ -4755,7 +4762,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Кондопожская ГЭС")]),
+        _c("th", [_vm._v("Кондопожская ГЭС (ГЭС-1)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges1))]),
         _vm._v(" "),
@@ -4767,7 +4774,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Пальеозерская ГЭС")]),
+        _c("th", [_vm._v("Пальеозерская ГЭС (ГЭС-2)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges2))]),
         _vm._v(" "),
@@ -4789,7 +4796,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Маткожненская ГЭС")]),
+        _c("th", [_vm._v("Маткожненская ГЭС (ГЭС-3)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges3))]),
         _vm._v(" "),
@@ -4801,7 +4808,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Выгостровская ГЭС")]),
+        _c("th", [_vm._v("Выгостровская ГЭС (ГЭС-5)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges5))]),
         _vm._v(" "),
@@ -4813,7 +4820,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Беломорская ГЭС")]),
+        _c("th", [_vm._v("Беломорская ГЭС (ГЭС-6)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges6))]),
         _vm._v(" "),
@@ -4825,7 +4832,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Палакоргская ГЭС")]),
+        _c("th", [_vm._v("Палакоргская ГЭС (ГЭС-7)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges7))]),
         _vm._v(" "),
@@ -4847,7 +4854,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Путкинская ГЭС")]),
+        _c("th", [_vm._v("Путкинская ГЭС (ГЭС-9)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges9))]),
         _vm._v(" "),
@@ -4859,7 +4866,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Подужемская ГЭС")]),
+        _c("th", [_vm._v("Подужемская ГЭС (ГЭС-10)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges10))]),
         _vm._v(" "),
@@ -4873,7 +4880,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Кривопорожская ГЭС")]),
+        _c("th", [_vm._v("Кривопорожская ГЭС (ГЭС-14)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges14))]),
         _vm._v(" "),
@@ -4887,7 +4894,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _c("th", [_vm._v("Юшкозерская ГЭС")]),
+        _c("th", [_vm._v("Юшкозерская ГЭС (ГЭС-16)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.ges16))]),
         _vm._v(" "),
@@ -4901,7 +4908,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("tr", { staticStyle: { background: "#ffebcd" } }, [
-        _c("th", [_vm._v(" Петрозаводская ТЭЦ")]),
+        _c("th", [_vm._v(" Петрозаводская ТЭЦ (ПТЭЦ-13)")]),
         _vm._v(" "),
         _c("td", [_vm._v(_vm._s(_vm.generation.tec13))]),
         _vm._v(" "),

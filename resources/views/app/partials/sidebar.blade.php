@@ -3,6 +3,12 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
+            <a href="{{ route('app') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-home {{ request()->is('/') ? 'text-white' : '' }}" style="color: #007bff;"></i>
+                <p>Главная страница</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('about') }}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-book {{ request()->is('about') ? 'text-white' : '' }}" style="color: #007bff;"></i>
                 <p>О Филиале</p>
