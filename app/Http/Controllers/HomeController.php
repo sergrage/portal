@@ -30,6 +30,11 @@ class HomeController extends Controller
         return view('welcome');
     }
 
+    public function about()
+    {
+        return view('app.about.index');
+    }
+
      public function weather(){
         $response = Http::get('http://api.openweathermap.org/data/2.5/weather', [
             'units' => 'metric',

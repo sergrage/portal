@@ -49,4 +49,6 @@
     </div>
 @endsection
 
-
+@section('javascript')
+<script src="{{ mix('/vue/js/params.js') }}"></script>
+@endsection

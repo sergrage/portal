@@ -7,6 +7,7 @@ Route::get('/test', function(){
 });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('app');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
 Route::get('/weather', [App\Http\Controllers\HomeController::class, 'weather'])->name('weather');
 

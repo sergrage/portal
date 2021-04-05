@@ -2,6 +2,12 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
+        <li class="nav-item">
+            <a href="{{ route('about') }}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-book {{ request()->is('about') ? 'text-white' : '' }}" style="color: #007bff;"></i>
+                <p>О Филиале</p>
+            </a>
+        </li>
         <li class="nav-header font-weight-bold">ПАРАМЕТРЫ</li>
         <li class="nav-item">
             <a href="{{ route('temperature') }}" class="nav-link {{ request()->is('temperature') ? 'active' : '' }}">
@@ -15,6 +21,63 @@
                 <p>Генерация</p>
             </a>
         </li>
+        <li class="nav-header font-weight-bold">ОПЕР. ИНФ-Я</li>
+{{--         <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 1</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 2</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 3</p>
+            </a>
+        </li> --}}
+        <li class="nav-header font-weight-bold">ЗАПАСЫ</li>
+{{--         <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 1</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 2</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 3</p>
+            </a>
+        </li> --}}
+        <li class="nav-header font-weight-bold">КАТЕЛЬНЫЕ</li>
+{{--         <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 1</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 2</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Параметр 3</p>
+            </a>
+        </li> --}}
 {{--        <li class="nav-header">ОТЧЕТЫ</li>--}}
 {{--        <li class="nav-item">--}}
 {{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
@@ -23,7 +86,7 @@
 {{--            </a>--}}
 {{--        </li>--}}
 {{--        <li class="nav-item">--}}
-{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
+{{--             <a href="https://adminlte.io/docs/3.0" class="nav-link"> --}}
 {{--                <i class="nav-icon fas fa-file"></i>--}}
 {{--                <p>Ежедневный отчет</p>--}}
 {{--            </a>--}}
@@ -284,7 +347,7 @@
 {{--        </li>--}}
 {{--        <li class="nav-item">--}}
 {{--            <a href="pages/gallery.html" class="nav-link">--}}
-{{--                <i class="nav-icon far fa-image"></i>--}}
+{{--                 <i class="nav-icon far fa-image"></i> --}}
 {{--                <p>--}}
 {{--                    Gallery--}}
 {{--                </p>--}}
