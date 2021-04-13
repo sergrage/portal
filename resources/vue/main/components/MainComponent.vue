@@ -1,11 +1,11 @@
 <template>
     <table class="table table-bordered largeText">
-  <thead>
+<!--   <thead>
     <tr>
       <th scope="col">Основные параметры филиала</th>
       <th scope="col">Значение</th>
     </tr>
-  </thead>
+  </thead> -->
     <tbody>
     <tr class="generation">
       <td>Суммарная генерация</td>

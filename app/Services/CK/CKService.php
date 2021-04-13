@@ -72,17 +72,17 @@ class CKService {
         $idValueArray = $this->keyValueArray($powers, $powerArray);
 
         Power::create([
-            'ges1' => $idValueArray[1],
-            'ges2' => $idValueArray[2],
-            'ges3' => $idValueArray[3],
-            'ges5' => $idValueArray[5],
-            'ges6' => $idValueArray[6],
-            'ges7' => $idValueArray[7],
-            'ges9' => $idValueArray[9],
-            'ges10' => $idValueArray[10],
-            'ges14' => $idValueArray[14],
-            'ges16' => $idValueArray[16],
-            'tec13' => $idValueArray[13],
+            'ges1' => round($idValueArray[1], 1),
+            'ges2' => round($idValueArray[2], 1),
+            'ges3' => round($idValueArray[3], 1),
+            'ges5' => round($idValueArray[5], 1),
+            'ges6' => round($idValueArray[6], 1),
+            'ges7' => round($idValueArray[7], 1),
+            'ges9' => round($idValueArray[9], 1),
+            'ges10' => round($idValueArray[10], 1),
+            'ges14' => round($idValueArray[14], 1),
+            'ges16' => round($idValueArray[16], 1),
+            'tec13' => round($idValueArray[13], 1),
             'status' =>  $this->getStatus($powers)
         ]);
         return 1;

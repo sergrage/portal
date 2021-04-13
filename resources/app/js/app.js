@@ -1,3 +1,5 @@
+
+
     $('#myTable').DataTable({
         "language": {
             "processing": "Подождите...",

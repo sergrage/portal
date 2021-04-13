@@ -29,11 +29,13 @@ mix.sass('resources/app/sass/app.scss', 'public/app/css/app.css')
         'resources/app/js/select2.full.min.js',
         'resources/app/js/datepicker.min.js',
         'resources/app/js/adminlte.js',
+        'resources/app/js/chart.min.js',
+        'resources/app/js/vue-chartjs.min.js',
         'resources/app/js/app.js'
     ], 'public/app/js/app.js').version();
 
-mix.copy('resources/app/webfonts', 'public/app/webfonts');
-mix.copy('resources/app/fonts', 'public/app/fonts');
+// mix.copy('resources/app/webfonts', 'public/app/webfonts');
+// mix.copy('resources/app/fonts', 'public/app/fonts');
 mix.copy('resources/app/img', 'public/app/img');
 
 

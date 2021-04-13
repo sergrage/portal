@@ -85,17 +85,17 @@ class GetPbr extends Command
                 $pbr = $conn->select($sql, ["Л", $this->gesIdString($gesArray), $now.' '. $hour .':00:00']);
 
                 Pbr::create([
-                    'ges1' => $pbr[0]->value,
-                    'ges2' => $pbr[1]->value,
-                    'ges3' => $pbr[2]->value,
-                    'ges5' => $pbr[3]->value,
-                    'ges6' => $pbr[4]->value,
-                    'ges7' => $pbr[5]->value,
-                    'ges9' => $pbr[6]->value,
-                    'ges10' => $pbr[7]->value,
-                    'ges14' => $pbr[9]->value,
-                    'tec13' => $pbr[8]->value,
-                    'ges16' => $pbr[10]->value,
+                    'ges1' => round($pbr[0]->value, 1),
+                    'ges2' =>  round($pbr[1]->value, 1),
+                    'ges3' =>  round($pbr[2]->value, 1),
+                    'ges5' =>  round($pbr[3]->value, 1),
+                    'ges6' =>  round($pbr[4]->value, 1),
+                    'ges7' =>  round($pbr[5]->value, 1),
+                    'ges9' =>  round($pbr[6]->value, 1),
+                    'ges10' =>  round($pbr[7]->value,1),
+                    'ges14' =>  round($pbr[9]->value,1),
+                    'tec13' =>  round($pbr[8]->value,1),
+                    'ges16' =>  round($pbr[10]->value,1),
                     'status' =>  $this->getStatus($pbr)
                 ]);
             } catch (\Illuminate\Database\QueryException $e) {

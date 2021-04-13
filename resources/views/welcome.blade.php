@@ -29,6 +29,14 @@
          <div class="row">
             <div class="col-12 pb-5">
                 <main-component></main-component>
+                <linecont-chart></linecont-chart>
+            </div>
+            <div class="col-6 pb-5">
+                <img src="app/img/map.svg?{{time()}}" alt="" class="" style="width: 90%">
+            </div>
+            <div class="col-6 pb-5">
+                <h4>Генерация электростанций Филиала "Карельский"</h3>
+                <generation-component></generation-component>
             </div>
             <div class="col-12 pb-5">
                 <h4>Водноэнергетические ресурсы</h3>
@@ -38,13 +46,7 @@
                 <h4>Топливо ПТЭЦ-13</h3>
                 <fuel-component></fuel-component>
             </div>
-            <div class="col-6">
-                <img src="app/img/map.svg?{{time()}}" alt="" class="" style="width: 90%">
-            </div>
-            <div class="col-6">
-                <h4>Генерация электростанций Филиала "Карельский"</h3>
-                <generation-component></generation-component>
-            </div>
+            
          </div>
      </div>
         <!-- Main content -->
@@ -60,5 +62,7 @@
 @endsection
 
 @section('javascript')
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script> --}}
 <script src="{{ mix('/vue/js/main.js') }}"></script>
 @endsection

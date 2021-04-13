@@ -1899,6 +1899,72 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": VueChartJs.Line,
+  data: function data() {
+    return {
+      chartData: {
+        // type: 'line',
+        labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+        datasets: [{
+          label: 'ПБР',
+          borderColor: '#ff0500',
+          backgroundColor: '#ff0500',
+          data: this.$store.state.pbr
+        }, {
+          label: 'Генерация',
+          borderColor: '#007bff',
+          backgroundColor: '#007bff',
+          data: this.$store.state.powerForDay
+        }]
+      },
+      chartOptions: {
+        title: {
+          display: true,
+          text: 'Суточная генерация филиала'
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        elements: {
+          line: {
+            fill: false
+          }
+        },
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Часы'
+            }
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Мощность, МВт'
+            }
+          }
+        }
+      }
+    };
+  },
+  mounted: function mounted() {
+    this.renderChart(this.chartData, this.chartOptions);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/FuelComponent.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/FuelComponent.vue?vue&type=script&lang=js& ***!
@@ -2289,6 +2355,33 @@ __webpack_require__.r(__webpack_exports__);
     },
     temperature: function temperature() {
       return this.$store.state.temperature;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    loaded: function loaded() {
+      return this.$store.state.loaded;
     }
   }
 });
@@ -4963,8 +5056,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("table", { staticClass: "table table-bordered largeText" }, [
-    _vm._m(0),
-    _vm._v(" "),
     _c("tbody", [
       _c("tr", { staticClass: "generation" }, [
         _c("td", [_vm._v("Суммарная генерация")]),
@@ -4985,22 +5076,36 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [
-          _vm._v("Основные параметры филиала")
-        ]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Значение")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [_vm.loaded ? _c("line-chart") : _vm._e()],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -18489,6 +18594,56 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/vue/main/components/Chart.vue":
+/*!*************************************************!*\
+  !*** ./resources/vue/main/components/Chart.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chart.vue?vue&type=script&lang=js& */ "./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/main/components/Chart.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/vue/main/components/Chart.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/vue/main/components/FuelComponent.vue":
 /*!*********************************************************!*\
   !*** ./resources/vue/main/components/FuelComponent.vue ***!
@@ -18714,6 +18869,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/vue/main/components/PowerLineChart.vue":
+/*!**********************************************************!*\
+  !*** ./resources/vue/main/components/PowerLineChart.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PowerLineChart.vue?vue&type=template&id=5ed88709& */ "./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709&");
+/* harmony import */ var _PowerLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PowerLineChart.vue?vue&type=script&lang=js& */ "./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PowerLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/main/components/PowerLineChart.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PowerLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PowerLineChart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/PowerLineChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PowerLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PowerLineChart.vue?vue&type=template&id=5ed88709& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/PowerLineChart.vue?vue&type=template&id=5ed88709&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PowerLineChart_vue_vue_type_template_id_5ed88709___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/vue/main/components/WaterComponent.vue":
 /*!**********************************************************!*\
   !*** ./resources/vue/main/components/WaterComponent.vue ***!
@@ -18804,11 +19028,16 @@ Vue.component('main-component', __webpack_require__(/*! ./components/MainCompone
 Vue.component('generation-component', __webpack_require__(/*! ./components/GenerationComponent.vue */ "./resources/vue/main/components/GenerationComponent.vue")["default"]);
 Vue.component('water-component', __webpack_require__(/*! ./components/WaterComponent.vue */ "./resources/vue/main/components/WaterComponent.vue")["default"]);
 Vue.component('fuel-component', __webpack_require__(/*! ./components/FuelComponent.vue */ "./resources/vue/main/components/FuelComponent.vue")["default"]);
+Vue.component('linecont-chart', __webpack_require__(/*! ./components/PowerLineChart.vue */ "./resources/vue/main/components/PowerLineChart.vue")["default"]);
+Vue.component('line-chart', __webpack_require__(/*! ./components/Chart.vue */ "./resources/vue/main/components/Chart.vue")["default"]); // Vue.component('linecont-chart', require('./components/ChartContainer.vue').default);
+
 var app = new Vue({
   el: '#main',
   store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
   created: function created() {
     this.$store.dispatch("getDataFromServer");
+    this.$store.dispatch("getPbr");
+    this.$store.dispatch("getPower");
   },
   mounted: function mounted() {
     var _this = this;
@@ -18817,11 +19046,7 @@ var app = new Vue({
       _this.$store.dispatch("getDataFromServer");
     }, 5000);
   }
-}); // mounted: function () {
-//   window.setInterval(() => {
-//     this.getNotifications()
-//   }, 30000)
-// }
+});
 
 /***/ }),
 
@@ -18843,8 +19068,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
     power: 0,
+    sumPower: 0,
+    pbr: [],
+    powerForDay: [],
     temperature: 0,
-    generation: {}
+    generation: {},
+    loaded: false
   },
   actions: {
     getDataFromServer: function getDataFromServer(context, payload) {
@@ -18852,11 +19081,21 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
         context.commit('changePower', response.data['generation']);
         context.commit('changeTemperature', response.data['temperature']);
         context.commit('changeGeneration', response.data);
+        context.commit('changeLoaded', true);
       })["catch"](function (error) {
         console.log(error.response.data);
       });
     },
-    getPbr: function getPbr(context, payload) {}
+    getPower: function getPower(context, payload) {
+      axios.get('/api/powerForDay').then(function (response) {
+        context.commit('changePowerForDay', response.data['result']);
+      });
+    },
+    getPbr: function getPbr(context, payload) {
+      axios.get('/api/pbrForDay').then(function (response) {
+        context.commit('changePbr', response.data['result']);
+      });
+    }
   },
   getters: {},
   mutations: {
@@ -18868,6 +19107,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     changeTemperature: function changeTemperature(state, payload) {
       state.temperature = payload;
+    },
+    changePbr: function changePbr(state, payload) {
+      state.pbr = payload;
+    },
+    changeLoaded: function changeLoaded(state, payload) {
+      state.loaded = payload;
+    },
+    changePowerForDay: function changePowerForDay(state, payload) {
+      state.powerForDay = payload;
     }
   }
 }));
