@@ -1940,20 +1940,18 @@ __webpack_require__.r(__webpack_exports__);
           }
         },
         scales: {
-          x: {
-            display: true,
-            title: {
+          xAxes: [{
+            scaleLabel: {
               display: true,
-              text: 'Часы'
+              labelString: 'Время'
             }
-          },
-          y: {
-            display: true,
-            title: {
+          }],
+          yAxes: [{
+            scaleLabel: {
               display: true,
-              text: 'Мощность, МВт'
+              labelString: 'Мощность, МВт'
             }
-          }
+          }]
         }
       }
     };

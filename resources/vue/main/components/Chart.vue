@@ -36,20 +36,22 @@ export default {
           }        
         },
         scales: {
-         x: {
-            display: true,
-            title: {
-              display: true,
-              text: 'Часы'
-            }
-          },
-          y: {
-            display: true,
-            title: {
-              display: true,
-              text: 'Мощность, МВт'
-            }
-          },
+          xAxes: [
+          {
+             scaleLabel: {
+               display: true,
+                labelString: 'Время'
+             }
+           }
+        ],
+        yAxes: [
+          {
+             scaleLabel: {
+               display: true,
+                labelString: 'Мощность, МВт'
+             }
+           }
+        ],
         }
       }
     }

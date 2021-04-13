@@ -2176,6 +2176,15 @@ __webpack_require__.r(__webpack_exports__);
     date: function date() {
       return this.$store.state.dateForRequest;
     }
+  },
+  methods: {
+    round: function round(val, precision) {
+      if (typeof val == 'number') {
+        return val.toFixed(precision);
+      }
+
+      return val;
+    }
   }
 });
 
@@ -5584,27 +5593,27 @@ var render = function() {
               _vm._v(_vm._s(index) + ":00")
             ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges1))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges1, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges2))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges2, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges3))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges3, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges5))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges5, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges6))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges6, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges7))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges7, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges9))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges9, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges10))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges10, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges14))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges14, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.ges16))]),
+            _c("td", [_vm._v(_vm._s(_vm.round(t.ges16, 1)))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(t.tec13))])
+            _c("td", [_vm._v(_vm._s(_vm.round(t.tec13, 1)))])
           ])
         }),
         0

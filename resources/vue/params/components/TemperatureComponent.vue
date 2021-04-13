@@ -19,17 +19,17 @@
         <tbody class="text-center">
         <tr class="center" v-for="(t, index) in temperature">
             <th scope="row">{{index}}:00</th>
-            <td>{{t.ges1}}</td>
-            <td>{{t.ges2}}</td>
-            <td>{{t.ges3}}</td>
-            <td>{{t.ges5}}</td>
-            <td>{{t.ges6}}</td>
-            <td>{{t.ges7}}</td>
-            <td>{{t.ges9}}</td>
-            <td>{{t.ges10}}</td>
-            <td>{{t.ges14}}</td>
-            <td>{{t.ges16}}</td>
-            <td>{{t.tec13}}</td>
+            <td>{{round(t.ges1, 1) }}</td>
+            <td>{{round(t.ges2, 1) }}</td>
+            <td>{{round(t.ges3, 1) }}</td>
+            <td>{{round(t.ges5, 1) }}</td>
+            <td>{{round(t.ges6, 1) }}</td>
+            <td>{{round(t.ges7, 1) }}</td>
+            <td>{{round(t.ges9, 1) }}</td>
+            <td>{{round(t.ges10, 1) }}</td>
+            <td>{{round(t.ges14, 1) }}</td>
+            <td>{{round(t.ges16, 1) }}</td>
+            <td>{{round(t.tec13, 1) }}</td>
         </tr>
         </tbody>
     </table>
@@ -44,6 +44,16 @@ export default {
         },
         date() {
             return this.$store.state.dateForRequest;
+        },
+        
+
+    },
+    methods: {
+        round(val, precision) {
+            if(typeof val == 'number') {
+                return val.toFixed(precision);
+            }
+            return val;
         }
     }
 }

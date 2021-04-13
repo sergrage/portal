@@ -62,7 +62,7 @@
 @endsection
 
 @section('javascript')
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script> --}}
 <script src="{{ mix('/vue/js/main.js') }}"></script>
 @endsection
