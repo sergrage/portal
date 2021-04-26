@@ -19042,7 +19042,7 @@ var app = new Vue({
 
     window.setInterval(function () {
       _this.$store.dispatch("getDataFromServer");
-    }, 5000);
+    }, 10000);
   }
 });
 

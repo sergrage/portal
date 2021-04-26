@@ -30,7 +30,7 @@ const app = new Vue({
     mounted(){
     	window.setInterval(() => {
 		    this.$store.dispatch("getDataFromServer");
-		}, 5000)
+		}, 10000)
         
     }
 });
