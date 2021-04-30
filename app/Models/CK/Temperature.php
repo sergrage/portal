@@ -20,6 +20,16 @@ class Temperature extends Model
         'ges14',
         'ges16',
         'tec13',
+        'wges1',
+        'wges2',
+        'wges3',
+        'wges5',
+        'wges6',
+        'wges7',
+        'wges9',
+        'wges10',
+        'wges14',
+        'wges16',
         'status'
     ];
 

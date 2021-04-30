@@ -20,6 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/power-json', [App\Http\Controllers\App\PowerController::class, 'power']);
 Route::get('/temperature-json', [App\Http\Controllers\App\TemperatureController::class, 'temperature']);
+Route::get('/waterTemperature-json', [App\Http\Controllers\App\TemperatureController::class, 'temperature']);
+Route::get('/cgms-json', [App\Http\Controllers\App\TemperatureController::class, 'cgmsJSON']);
 Route::get('/generation', [App\Http\Controllers\App\GenerationController::class, 'getGeneartion']);
 Route::get('/pbrForDay', [App\Http\Controllers\App\GenerationController::class, 'getPbr']);
 Route::get('/powerForDay', [App\Http\Controllers\App\GenerationController::class, 'getPower']);
+Route::get('/getFuel', [App\Http\Controllers\App\GenerationController::class, 'getFuel']);
+
+Route::apiResource('fuel', App\Http\Controllers\App\FuelController::class);

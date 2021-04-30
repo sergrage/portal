@@ -13,6 +13,8 @@ Route::get('/weather', [App\Http\Controllers\HomeController::class, 'weather'])-
 
 // Параметры
 Route::get('/temperature', [App\Http\Controllers\App\TemperatureController::class, 'index'])->name('temperature');
+Route::get('/waterTemperature', [App\Http\Controllers\App\TemperatureController::class, 'water'])->name('waterTemperature');
+Route::get('/cgms', [App\Http\Controllers\App\TemperatureController::class, 'cgms'])->name('cgms');
 Route::get('/power', [App\Http\Controllers\App\PowerController::class, 'index'])->name('power');
 
 // Аунтификация
@@ -35,6 +37,10 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
             ->name('phpinfo');
             Route::get('/dbTest', [App\Http\Controllers\Admin\DashboardController::class, 'dbTest'])
                 ->name('dbTest');
+            Route::get('/parse', [App\Http\Controllers\Admin\ParseController::class, 'index'])
+                ->name('parse.index');
+            Route::post('/parse', [App\Http\Controllers\Admin\ParseController::class, 'store'])
+                ->name('parse.store');
             Route::resources([
 			'users' => App\Http\Controllers\Admin\UserController::class,
 			'roles' => App\Http\Controllers\Admin\RoleController::class,

@@ -26,6 +26,7 @@ const app = new Vue({
          this.$store.dispatch("getDataFromServer");
          this.$store.dispatch("getPbr");
          this.$store.dispatch("getPower");
+         this.$store.dispatch("getFuel");
 	},
     mounted(){
     	window.setInterval(() => {

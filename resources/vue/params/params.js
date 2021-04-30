@@ -12,6 +12,9 @@ Vue.component('safepdf-component', require('./components/SaveAsPdfComponent.vue'
 Vue.component('safeexcel-component', require('./components/SaveAsExcelComponent.vue').default);
 Vue.component('power-component', require('./components/PowerComponent.vue').default);
 Vue.component('temperature-component', require('./components/TemperatureComponent.vue').default);
+Vue.component('watertemperature-component', require('./components/WaterTemperatureComponent.vue').default);
+Vue.component('cgms-component', require('./components/CgmsComponent.vue').default);
+Vue.component('yearselect-component', require('./components/YearSelectComponent.vue').default);
 Vue.component('datepicker-component', require('./components/DatePickerComponent.vue').default);
 // Vue.component('pdf-component', require('./components/SaveAsPdfVueComponent').default);
 

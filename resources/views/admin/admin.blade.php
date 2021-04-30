@@ -27,9 +27,9 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-            <div class="row">
-            <h1>Тут пока пусто</h1>
-            </div>
+                <div class="row">
+                    <h1>Тут пока пусто</h1>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>

@@ -10,10 +10,10 @@
         </thead>
         <tbody class="text-center">
         <tr>
-            <td>-----</td>
-            <td>-----</td>
-            <td>-----</td>
-            <td>-----</td>
+            <td>{{fuels.fact}}</td>
+            <td>{{fuels.norm}}</td>
+            <td>{{fuels.dead}}</td>
+            <td>{{fuels.work}}</td>
         </tr>
         </tbody>
     </table>
@@ -22,7 +22,9 @@
 <script>
 export default {
     computed: {
-
+        fuels() {
+            return this.$store.state.fuels;
+        }
     },
     methods: {
 

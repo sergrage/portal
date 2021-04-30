@@ -7,12 +7,14 @@ export default new Vuex.Store({
     state: {
         tableData: [],
         dateForRequest: '',
-        url: ''
+        url: '',
+        cgmsYear: new Date().getFullYear(),
     },
     actions: {
         getDataFromServer(context, payload){
             axios.get(this.getters.apiLink, { params:  {dateTo:payload } }).then((response) =>{
                 context.commit('changeData', response.data.result);
+                console.log(response.data.result)
             });
         },
         createPdfFile(context, payload){
@@ -53,7 +55,10 @@ export default new Vuex.Store({
         },
         setCurrentUrl(state, payload) {
             state.url = payload;
-        }
+        },
+        SET_CGMSYEAR(state, payload) {
+            state.cgmsYear = payload;
+        },
     }
 })
 

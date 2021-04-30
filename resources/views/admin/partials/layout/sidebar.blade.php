@@ -33,6 +33,12 @@
                         <p>dbTest</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('administrator.parse.index')}}" class="nav-link">
+                        <i class="fas fa-cog nav-icon"></i>
+                        <p>Парсинг</p>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item has-treeview menu-open">

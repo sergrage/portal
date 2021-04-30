@@ -1994,7 +1994,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: {},
+  computed: {
+    fuels: function fuels() {
+      return this.$store.state.fuels;
+    }
+  },
   methods: {}
 });
 
@@ -4761,60 +4765,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "table",
+    { staticClass: "table table-striped table-sm table-bordered" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("tbody", { staticClass: "text-center" }, [
+        _c("tr", [
+          _c("td", [_vm._v(_vm._s(_vm.fuels.fact))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.fuels.norm))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.fuels.dead))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.fuels.work))])
+        ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      { staticClass: "table table-striped table-sm table-bordered" },
-      [
-        _c("thead", [
+    return _c("thead", [
+      _c(
+        "tr",
+        {
+          staticStyle: { background: "#007bff", color: "#fff" },
+          attrs: { align: "center" }
+        },
+        [
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("Фактический запас")]),
+          _vm._v(" "),
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("Нормативный запас")]),
+          _vm._v(" "),
           _c(
-            "tr",
-            {
-              staticStyle: { background: "#007bff", color: "#fff" },
-              attrs: { align: "center" }
-            },
-            [
-              _c("th", { attrs: { scope: "col" } }, [
-                _vm._v("Фактический запас")
-              ]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [
-                _vm._v("Нормативный запас")
-              ]),
-              _vm._v(" "),
-              _c(
-                "th",
-                {
-                  staticStyle: { background: "#000" },
-                  attrs: { scope: "col" }
-                },
-                [_vm._v("Мертвый остаток")]
-              ),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Рабочий объем")])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("tbody", { staticClass: "text-center" }, [
-          _c("tr", [
-            _c("td", [_vm._v("-----")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("-----")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("-----")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("-----")])
-          ])
-        ])
-      ]
-    )
+            "th",
+            { staticStyle: { background: "#000" }, attrs: { scope: "col" } },
+            [_vm._v("Мертвый остаток")]
+          ),
+          _vm._v(" "),
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("Рабочий объем")])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -19036,6 +19033,7 @@ var app = new Vue({
     this.$store.dispatch("getDataFromServer");
     this.$store.dispatch("getPbr");
     this.$store.dispatch("getPower");
+    this.$store.dispatch("getFuel");
   },
   mounted: function mounted() {
     var _this = this;
@@ -19071,49 +19069,59 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     powerForDay: [],
     temperature: 0,
     generation: {},
-    loaded: false
+    loaded: false,
+    fuels: {}
   },
   actions: {
     getDataFromServer: function getDataFromServer(context, payload) {
       axios.get('/api/generation').then(function (response) {
-        context.commit('changePower', response.data['generation']);
-        context.commit('changeTemperature', response.data['temperature']);
-        context.commit('changeGeneration', response.data);
-        context.commit('changeLoaded', true);
+        context.commit('SET_POWER', response.data['generation']);
+        context.commit('SET_TEMPERATURE', response.data['temperature']);
+        context.commit('SET_GENERATION', response.data);
+        context.commit('SET_LOADED', true);
       })["catch"](function (error) {
         console.log(error.response.data);
       });
     },
     getPower: function getPower(context, payload) {
       axios.get('/api/powerForDay').then(function (response) {
-        context.commit('changePowerForDay', response.data['result']);
+        context.commit('SET_POWER_FOR_DAY', response.data['result']);
       });
     },
     getPbr: function getPbr(context, payload) {
       axios.get('/api/pbrForDay').then(function (response) {
-        context.commit('changePbr', response.data['result']);
+        context.commit('SET_PBR', response.data['result']);
+      });
+    },
+    getFuel: function getFuel(context, payload) {
+      axios.get('/api/getFuel').then(function (response) {
+        context.commit('SET_FUEL', response.data['result']);
+        console.log(response.data['result']);
       });
     }
   },
   getters: {},
   mutations: {
-    changeGeneration: function changeGeneration(state, payload) {
+    SET_GENERATION: function SET_GENERATION(state, payload) {
       state.generation = payload;
     },
-    changePower: function changePower(state, payload) {
+    SET_POWER: function SET_POWER(state, payload) {
       state.power = payload;
     },
-    changeTemperature: function changeTemperature(state, payload) {
+    SET_TEMPERATURE: function SET_TEMPERATURE(state, payload) {
       state.temperature = payload;
     },
-    changePbr: function changePbr(state, payload) {
+    SET_PBR: function SET_PBR(state, payload) {
       state.pbr = payload;
     },
-    changeLoaded: function changeLoaded(state, payload) {
+    SET_LOADED: function SET_LOADED(state, payload) {
       state.loaded = payload;
     },
-    changePowerForDay: function changePowerForDay(state, payload) {
+    SET_POWER_FOR_DAY: function SET_POWER_FOR_DAY(state, payload) {
       state.powerForDay = payload;
+    },
+    SET_FUEL: function SET_FUEL(state, payload) {
+      state.fuels = payload;
     }
   }
 }));

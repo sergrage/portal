@@ -15,16 +15,35 @@
             </a>
         </li>
         <li class="nav-header font-weight-bold">ПАРАМЕТРЫ</li>
-        <li class="nav-item">
-            <a href="{{ route('temperature') }}" class="nav-link {{ request()->is('temperature') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-thermometer-half {{ request()->is('temperature') ? 'text-white' : '' }}" style="color: #007bff;"></i>
+        <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active ">
+                <i class="nav-icon fas fa-thermometer-half "></i>
                 <p>Температура</p>
+                <i class="right fas fa-angle-left"></i>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('temperature') }}" class="nav-link {{ request()->is('temperature') ? 'active' : '' }}">
+                        <i class="fas fa-wind nav-icon "></i> <p>Воздух</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{  route('waterTemperature') }}" class="nav-link {{ request()->is('waterTemperature') ? 'active' : '' }}">
+                        <i class="fas fa-water nav-icon"></i> <p>Вода</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{  route('cgms') }}" class="nav-link {{ request()->is('cgms') ? 'active' : '' }}">
+                        <i class="fas fa-cloud nav-icon"></i> <p>ЦГМС</p>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item">
-            <a href="{{ route('power') }}" class="nav-link {{ request()->is('power') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-bolt {{ request()->is('power') ? 'text-white' : '' }}" style="color: #007bff;"></i>
+        <li class="nav-item has-treeview menu-open">
+            <a href="{{ route('power') }}" class="nav-link active {{ request()->is('power') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-bolt {{ request()->is('power') ? 'text-white' : '' }}"></i>
                 <p>Генерация</p>
+                <i class="right fas fa-angle-left"></i>
             </a>
         </li>
         <li class="nav-header font-weight-bold">ОПЕР. ИНФ-Я</li>
@@ -65,7 +84,7 @@
                 <p>Параметр 3</p>
             </a>
         </li> --}}
-        <li class="nav-header font-weight-bold">КАТЕЛЬНЫЕ</li>
+        <li class="nav-header font-weight-bold">КОТЕЛЬНЫЕ</li>
 {{--         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -84,56 +103,56 @@
                 <p>Параметр 3</p>
             </a>
         </li> --}}
-{{--        <li class="nav-header">ОТЧЕТЫ</li>--}}
-{{--        <li class="nav-item">--}}
-{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
-{{--                <i class="nav-icon fas fa-file"></i>--}}
-{{--                <p>Ежедневный отчет</p>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li class="nav-item">--}}
-{{--             <a href="https://adminlte.io/docs/3.0" class="nav-link"> --}}
-{{--                <i class="nav-icon fas fa-file"></i>--}}
-{{--                <p>Ежедневный отчет</p>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li class="nav-item">--}}
-{{--            <a href="https://adminlte.io/docs/3.0" class="nav-link">--}}
-{{--                <i class="nav-icon fas fa-file"></i>--}}
-{{--                <p>Ежедневный отчет</p>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+{{--        <li class="nav-header">ОТЧЕТЫ</li>
+       <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>Ежедневный отчет</p>
+            </a>
+        </li>
+        <li class="nav-item">
+             <a href="https://adminlte.io/docs/3.0" class="nav-link"> 
+                <i class="nav-icon fas fa-file"></i>
+                <p>Ежедневный отчет</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>Ежедневный отчет</p>
+            </a>
+       </li> --}}
 
-{{--        <li class="nav-item has-treeview menu-open">--}}
+{{--         <li class="nav-item has-treeview menu-open">
 
-{{--            <a href="#" class="nav-link active">--}}
-{{--                <i class="nav-icon fas fa-tachometer-alt"></i>--}}
-{{--                <p>--}}
-{{--                    Отчеты--}}
-{{--                    <i class="right fas fa-angle-left"></i>--}}
-{{--                </p>--}}
-{{--            </a>--}}
-{{--            <ul class="nav nav-treeview">--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a href="./index.html" class="nav-link">--}}
-{{--                        <i class="far fa-circle nav-icon"></i>--}}
-{{--                        <p>Ежедневный отчет</p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a href="./index2.html" class="nav-link">--}}
-{{--                        <i class="far fa-circle nav-icon"></i>--}}
-{{--                        <p>Месячный отчет</p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a href="./index3.html" class="nav-link active">--}}
-{{--                        <i class="far fa-circle nav-icon"></i>--}}
-{{--                        <p>Текущие ремонты</p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
+            <a href="#" class="nav-link active">
+               <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Отчеты
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Ежедневный отчет</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./index2.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Месячный отчет</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./index3.html" class="nav-link active">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Текущие ремонты</p>
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
 
 {{--        <li class="nav-item has-treeview">--}}
 {{--            <a href="#" class="nav-link">--}}

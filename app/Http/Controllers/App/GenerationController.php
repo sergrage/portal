@@ -5,8 +5,10 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use App\Models\CK\Pbr;
 use App\Models\CK\Power;
+use App\Models\CK\Fuel;
 use Carbon\Carbon;
 
 class GenerationController extends Controller
@@ -50,5 +52,12 @@ class GenerationController extends Controller
             $sum = 0;
         }
         return response()->json(['result' => $powersSum, 'state' => 200]);
+    }
+
+    public function getFuel()
+    {
+         
+        $fuel = DB::table('fuels')->latest()->first();
+        return response()->json(['result' => $fuel, 'state' => 200]);
     }
 }

@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-
+    <div id="main">
+        
+    
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -25,12 +27,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    @include('app.cabinet.partials.fuelTec')
+                    <fuel-component></fuel-component>
                 </div>
             </div>
         </div>
 
     </div>
     <!-- /.content-wrapper -->
+</div>
+@endsection
 
+@section('javascript')
+<script src="{{ mix('/vue/js/cabinet.js') }}"></script>
 @endsection
