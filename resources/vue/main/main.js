@@ -13,9 +13,14 @@ Vue.component('water-component', require('./components/WaterComponent.vue').defa
 Vue.component('fuel-component', require('./components/FuelComponent.vue').default);
 
 
+//  График Генерация/ПБР
+Vue.component('powerlinecont-chart', require('./components/PowerLineChart.vue').default);
+Vue.component('powerline-chart', require('./components/Chart.vue').default);
 
-Vue.component('linecont-chart', require('./components/PowerLineChart.vue').default);
-Vue.component('line-chart', require('./components/Chart.vue').default);
+
+//  График Температуры
+Vue.component('cgmslinecont-chart', require('./components/CgmsLineChart.vue').default);
+Vue.component('cgmsline-chart', require('./components/ChartCgms.vue').default);
 // Vue.component('linecont-chart', require('./components/ChartContainer.vue').default);
 
 
@@ -27,6 +32,7 @@ const app = new Vue({
          this.$store.dispatch("getPbr");
          this.$store.dispatch("getPower");
          this.$store.dispatch("getFuel");
+         this.$store.dispatch("getCgms");
 	},
     mounted(){
     	window.setInterval(() => {

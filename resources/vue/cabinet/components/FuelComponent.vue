@@ -56,18 +56,18 @@ export default {
     },
     computed: {
         form_submit() {
-            return this.$store.state.fuel.form_submit;
+            return this.$store.state.form_submit;
         },
         errors () {
-            return this.$store.state.fuel.errors;
+            return this.$store.state.errors;
         },
         form_success() {
-            return this.$store.state.fuel.success;
+            return this.$store.state.success;
         }
     },
     methods: {
         submit_form() {
-            this.$store.commit('SET_FUEL_FORM_SUBMIT', true)
+            this.$store.commit('SET_FORM_SUBMIT', true)
             let fields = new FormData()
             for(let key in this.fields) {
                 fields.append(key, this.fields[key])

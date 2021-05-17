@@ -1899,6 +1899,33 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    loaded: function loaded() {
+      return this.$store.state.loadedCgms;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js& ***!
@@ -1950,6 +1977,73 @@ __webpack_require__.r(__webpack_exports__);
             scaleLabel: {
               display: true,
               labelString: 'Мощность, МВт'
+            }
+          }]
+        }
+      }
+    };
+  },
+  mounted: function mounted() {
+    this.renderChart(this.chartData, this.chartOptions);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": VueChartJs.Line,
+  data: function data() {
+    return {
+      chartData: {
+        // type: 'line',
+        labels: this.$store.state.cgmsDates,
+        datasets: [{
+          label: 'Ежесуточная температура',
+          borderColor: '#a5a339',
+          backgroundColor: '#a5a339',
+          data: this.$store.state.cgms,
+          fill: true
+        }, {
+          label: 'Средняя температура - 8' + String.fromCharCode(176),
+          borderColor: '#393ba5',
+          backgroundColor: '#393ba5',
+          data: [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+          fill: false
+        }]
+      },
+      chartOptions: {
+        title: {
+          display: true,
+          text: 'Температура в Петрозаводске по данным Карельского ЦГМС'
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        elements: {
+          line: {}
+        },
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Дата'
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Температура, C' + String.fromCharCode(176)
+            },
+            ticks: {
+              suggestedMax: 40
             }
           }]
         }
@@ -4750,6 +4844,35 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [_vm.loaded ? _c("cgmsline-chart") : _vm._e()],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/FuelComponent.vue?vue&type=template&id=bda1515a&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/main/components/FuelComponent.vue?vue&type=template&id=bda1515a& ***!
@@ -5096,7 +5219,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    [_vm.loaded ? _c("line-chart") : _vm._e()],
+    [_vm.loaded ? _c("powerline-chart") : _vm._e()],
     1
   )
 }
@@ -18589,6 +18712,75 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/vue/main/components/CgmsLineChart.vue":
+/*!*********************************************************!*\
+  !*** ./resources/vue/main/components/CgmsLineChart.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CgmsLineChart.vue?vue&type=template&id=30fc1568& */ "./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568&");
+/* harmony import */ var _CgmsLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CgmsLineChart.vue?vue&type=script&lang=js& */ "./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CgmsLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/main/components/CgmsLineChart.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CgmsLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CgmsLineChart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/CgmsLineChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CgmsLineChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568&":
+/*!****************************************************************************************!*\
+  !*** ./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CgmsLineChart.vue?vue&type=template&id=30fc1568& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/CgmsLineChart.vue?vue&type=template&id=30fc1568&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CgmsLineChart_vue_vue_type_template_id_30fc1568___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/vue/main/components/Chart.vue":
 /*!*************************************************!*\
   !*** ./resources/vue/main/components/Chart.vue ***!
@@ -18636,6 +18828,56 @@ component.options.__file = "resources/vue/main/components/Chart.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/Chart.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/ChartCgms.vue":
+/*!*****************************************************!*\
+  !*** ./resources/vue/main/components/ChartCgms.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChartCgms_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChartCgms.vue?vue&type=script&lang=js& */ "./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _ChartCgms_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/main/components/ChartCgms.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChartCgms_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ChartCgms.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/main/components/ChartCgms.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChartCgms_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -19022,9 +19264,13 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('main-component', __webpack_require__(/*! ./components/MainComponent.vue */ "./resources/vue/main/components/MainComponent.vue")["default"]);
 Vue.component('generation-component', __webpack_require__(/*! ./components/GenerationComponent.vue */ "./resources/vue/main/components/GenerationComponent.vue")["default"]);
 Vue.component('water-component', __webpack_require__(/*! ./components/WaterComponent.vue */ "./resources/vue/main/components/WaterComponent.vue")["default"]);
-Vue.component('fuel-component', __webpack_require__(/*! ./components/FuelComponent.vue */ "./resources/vue/main/components/FuelComponent.vue")["default"]);
-Vue.component('linecont-chart', __webpack_require__(/*! ./components/PowerLineChart.vue */ "./resources/vue/main/components/PowerLineChart.vue")["default"]);
-Vue.component('line-chart', __webpack_require__(/*! ./components/Chart.vue */ "./resources/vue/main/components/Chart.vue")["default"]); // Vue.component('linecont-chart', require('./components/ChartContainer.vue').default);
+Vue.component('fuel-component', __webpack_require__(/*! ./components/FuelComponent.vue */ "./resources/vue/main/components/FuelComponent.vue")["default"]); //  График Генерация/ПБР
+
+Vue.component('powerlinecont-chart', __webpack_require__(/*! ./components/PowerLineChart.vue */ "./resources/vue/main/components/PowerLineChart.vue")["default"]);
+Vue.component('powerline-chart', __webpack_require__(/*! ./components/Chart.vue */ "./resources/vue/main/components/Chart.vue")["default"]); //  График Температуры
+
+Vue.component('cgmslinecont-chart', __webpack_require__(/*! ./components/CgmsLineChart.vue */ "./resources/vue/main/components/CgmsLineChart.vue")["default"]);
+Vue.component('cgmsline-chart', __webpack_require__(/*! ./components/ChartCgms.vue */ "./resources/vue/main/components/ChartCgms.vue")["default"]); // Vue.component('linecont-chart', require('./components/ChartContainer.vue').default);
 
 var app = new Vue({
   el: '#main',
@@ -19034,6 +19280,7 @@ var app = new Vue({
     this.$store.dispatch("getPbr");
     this.$store.dispatch("getPower");
     this.$store.dispatch("getFuel");
+    this.$store.dispatch("getCgms");
   },
   mounted: function mounted() {
     var _this = this;
@@ -19070,7 +19317,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     temperature: 0,
     generation: {},
     loaded: false,
-    fuels: {}
+    loadedCgms: false,
+    fuels: {},
+    cgms: [],
+    cgmsDates: []
   },
   actions: {
     getDataFromServer: function getDataFromServer(context, payload) {
@@ -19086,17 +19336,31 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     getPower: function getPower(context, payload) {
       axios.get('/api/powerForDay').then(function (response) {
         context.commit('SET_POWER_FOR_DAY', response.data['result']);
+      })["catch"](function (error) {
+        console.log(error.response.data);
       });
     },
     getPbr: function getPbr(context, payload) {
       axios.get('/api/pbrForDay').then(function (response) {
         context.commit('SET_PBR', response.data['result']);
+      })["catch"](function (error) {
+        console.log(error.response.data);
       });
     },
     getFuel: function getFuel(context, payload) {
       axios.get('/api/getFuel').then(function (response) {
         context.commit('SET_FUEL', response.data['result']);
-        console.log(response.data['result']);
+      })["catch"](function (error) {
+        console.log(error.response.data);
+      });
+    },
+    getCgms: function getCgms(context, payload) {
+      axios.get('/api/getCgms').then(function (response) {
+        context.commit('SET_CGMS', response.data['temperatures']);
+        context.commit('SET_CGMSDATES', response.data['dates']);
+        context.commit('SET_CGMSLOADED', true);
+      })["catch"](function (error) {
+        console.log(error.response.data);
       });
     }
   },
@@ -19117,11 +19381,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     SET_LOADED: function SET_LOADED(state, payload) {
       state.loaded = payload;
     },
+    SET_CGMSLOADED: function SET_CGMSLOADED(state, payload) {
+      state.loadedCgms = payload;
+    },
     SET_POWER_FOR_DAY: function SET_POWER_FOR_DAY(state, payload) {
       state.powerForDay = payload;
     },
     SET_FUEL: function SET_FUEL(state, payload) {
       state.fuels = payload;
+    },
+    SET_CGMS: function SET_CGMS(state, payload) {
+      state.cgms = payload;
+    },
+    SET_CGMSDATES: function SET_CGMSDATES(state, payload) {
+      state.cgmsDates = payload;
     }
   }
 }));

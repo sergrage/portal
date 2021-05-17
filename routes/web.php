@@ -44,6 +44,7 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
             Route::resources([
 			'users' => App\Http\Controllers\Admin\UserController::class,
 			'roles' => App\Http\Controllers\Admin\RoleController::class,
+            'year' => App\Http\Controllers\Admin\YearController::class,
 		    ]);
         });
     });

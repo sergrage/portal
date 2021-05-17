@@ -27,6 +27,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <cgms-component user-name="{{ Auth::user()->name }}"></cgms-component>
+                    <hr>
                     <fuel-component></fuel-component>
                 </div>
             </div>

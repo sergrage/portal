@@ -2357,18 +2357,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      selected: ''
-    };
-  },
   computed: {
-    year: function year() {
-      return this.selected;
+    selected: {
+      get: function get() {
+        return this.$store.state.cgmsYear;
+      },
+      set: function set(value) {
+        this.$store.commit('SET_CGMSYEAR', value);
+        this.$store.dispatch('getDataFromServer', this.$store.state.cgmsYear);
+      }
+    },
+    years: function years() {
+      return this.$store.state.cgmsYears;
     }
   },
   methods: {
@@ -6312,17 +6313,15 @@ var render = function() {
           }
         }
       },
-      [
-        _c("option", { attrs: { selected: "" } }, [_vm._v("2021")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("2020")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("2019")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("2018")])
-      ]
-    ),
-    _vm._v("\n    " + _vm._s(_vm.year) + "\n")
+      _vm._l(_vm.years, function(year) {
+        return _c(
+          "option",
+          { domProps: { value: year.cgms, selected: _vm.selected } },
+          [_vm._v("\n        " + _vm._s(year.cgms) + "\n      ")]
+        )
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []
@@ -24338,6 +24337,7 @@ var app = new Vue({
   el: '#app',
   store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
   created: function created() {
+    var year = new Date().getFullYear();
     this.$store.commit('setCurrentUrl', window.location.pathname);
     this.$store.dispatch("getDataFromServer", null);
   }
@@ -24365,17 +24365,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     tableData: [],
     dateForRequest: '',
     url: '',
-    cgmsYear: new Date().getFullYear()
+    cgmsYear: new Date().getFullYear(),
+    cgmsYears: []
   },
   actions: {
     getDataFromServer: function getDataFromServer(context, payload) {
+      console.log(payload);
       axios.get(this.getters.apiLink, {
         params: {
           dateTo: payload
         }
       }).then(function (response) {
         context.commit('changeData', response.data.result);
-        console.log(response.data.result);
+
+        if (response.data.years) {
+          context.commit('SET_CGMSYEARS', response.data.years);
+        }
       });
     },
     createPdfFile: function createPdfFile(context, payload) {
@@ -24419,6 +24424,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     setCurrentUrl: function setCurrentUrl(state, payload) {
       state.url = payload;
+    },
+    SET_CGMSYEARS: function SET_CGMSYEARS(state, payload) {
+      state.cgmsYears = payload;
     },
     SET_CGMSYEAR: function SET_CGMSYEAR(state, payload) {
       state.cgmsYear = payload;

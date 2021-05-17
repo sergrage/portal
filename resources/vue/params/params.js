@@ -23,7 +23,8 @@ const app = new Vue({
     el: '#app',
     store,
     created(){
+    	let year = new Date().getFullYear()
         this.$store.commit('setCurrentUrl', window.location.pathname)
-        this.$store.dispatch("getDataFromServer", null);
+        this.$store.dispatch("getDataFromServer", null)
     }
 });

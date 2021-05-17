@@ -29,7 +29,8 @@
          <div class="row">
             <div class="col-12 pb-5">
                 <main-component></main-component>
-                <linecont-chart></linecont-chart>
+                <powerlinecont-chart class="pb-5"></powerlinecont-chart>
+                <cgmslinecont-chart class="pb-5"></cgmslinecont-chart>
             </div>
             <div class="col-6 pb-5">
                 <img src="app/img/map.svg?{{time()}}" alt="" class="" style="width: 90%">

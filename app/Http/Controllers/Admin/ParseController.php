@@ -31,7 +31,7 @@ class ParseController extends Controller
 			 	$emptyDaysNumber++;
 			 	Cgms::create([
 					'temperature' => -100,
-					'created_at' => '2000-01-01',
+					'created_at' => $date,
 					'userName' => 'auto'
 				]);
 			 } else {
@@ -40,9 +40,10 @@ class ParseController extends Controller
 					'created_at' => $date,
 					'userName' => 'auto'
 				]);
+				$date = $date->add(1, 'day');
 			 }
 			
-			$date = $date->add(1, 'day');
+			
 		}	
 	}
 

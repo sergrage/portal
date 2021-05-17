@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <powerline-chart
+    <cgmsline-chart
       v-if="loaded"
      />
   </div>
@@ -11,7 +11,7 @@
 export default {
   computed: {
     loaded() {
-      return this.$store.state.loaded;
+      return this.$store.state.loadedCgms;
     }
   },
 }

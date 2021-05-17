@@ -1,26 +1,28 @@
 <template>
     <form action="" class="yearSelect">
-        <select class="form-control" v-model="selected">
-          <option selected>2021</option>
-          <option>2020</option>
-          <option>2019</option>
-          <option>2018</option>
+        <select v-model="selected" class="form-control">
+          <option v-for="year in years" v-bind:value="year.cgms" :selected="selected">
+            {{ year.cgms }}
+          </option>
         </select>
-        {{year}}
     </form>
-
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            selected: ''
-        }
-    },
     computed: {
-      year() {
-        return this.selected;
+      selected: {
+        get() {
+          return this.$store.state.cgmsYear;
+        },
+        set(value) {
+          this.$store.commit('SET_CGMSYEAR', value)
+          this.$store.dispatch('getDataFromServer', this.$store.state.cgmsYear)
+        }
+        
+      },
+      years() {
+        return this.$store.state.cgmsYears;
       }
     },
     methods: {
