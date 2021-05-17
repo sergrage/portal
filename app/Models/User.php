@@ -49,7 +49,7 @@ class User extends Authenticatable
     
     public function isCgms()
     {
-        return $this->roles->pluck('roleName')->contains('gKRL-Cgms-Techportal');
+        return $this->roles->pluck('roleName')->contains('gKRL-CGSM-Techportal');
     }
 
     public function isFuel()

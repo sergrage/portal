@@ -5,14 +5,14 @@
 <form @submit.prevent="submit_form()" v-if="!form_success">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputFact">Ввод данных температуры Карельского ЦГМС</label>
-            <input v-model="temperature" type="text" class="form-control" id="inputFact" placeholder="Фактический запас">
+            <label for="inputCGMS">Ввод данных температуры Карельского ЦГМС</label>
+            <input v-model="temperature" type="text" class="form-control" id="inputCGMS" placeholder="Температура ЦГМС">
             <div class="alert alert-danger" v-if="errors && errors.temperature">
                 {{ errors.temperature[0] }}
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label for="inputFact">Поменять температуру за дату</label>
+            <label for="inputCGMS">Поменять температуру за дату</label>
             <datepicker-component></datepicker-component>
         </div>
      </div>

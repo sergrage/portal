@@ -35,7 +35,7 @@ export default {
         }        
     },
     methods: {
-        round(val, precision = 2) {
+        round(val, precision = 1) {
             if(typeof val == 'number') {
                 return val.toFixed(precision);
             }
