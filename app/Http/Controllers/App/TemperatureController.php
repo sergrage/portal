@@ -53,7 +53,7 @@ class TemperatureController extends Controller
         $cgmsSorted = $cgms->sort()->values()->all();
 
         foreach($cgmsSorted as $c) {
-            $temperatures[] = $c->temperature;
+            $temperatures[] = (int)$c->temperature;
             $dates[] = $c->created_at->format('Y-m-d');
         }
             

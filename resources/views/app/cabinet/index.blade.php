@@ -27,9 +27,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    @if(Auth::user()->isAdmin() or Auth::user()->isCgms())
                     <cgms-component user-name="{{ Auth::user()->name }}"></cgms-component>
                     <hr>
+                    @endif
+
+                    @if(Auth::user()->isAdmin() or Auth::user()->isFuel())
                     <fuel-component></fuel-component>
+                    @endif
                 </div>
             </div>
         </div>
