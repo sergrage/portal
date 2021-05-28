@@ -1,6 +1,6 @@
 <template>
     <a :href="excelDownloadLink"
-       class="btn text-white mt-3"
+       class="btn text-white"
        style="background:#1D6F42;">
         <i class="far fa-file-excel"></i>
         Скачать Excel</a>

@@ -18,6 +18,7 @@
                         </div>
                         <div class="col-sm-12">
                             <yearselect-component></yearselect-component>
+                            <safeexcel-component class="ml-3" style="margin-bottom: 7px;"></safeexcel-component>
                             @include('app.partials.date')
                         </div>
                         <cgms-component></watertemperature-component>

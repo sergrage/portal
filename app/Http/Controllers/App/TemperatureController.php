@@ -64,11 +64,11 @@ class TemperatureController extends Controller
     {
         // Дата из $request. Сразу текущий год. Потом по селекту. 
         $date = $request->get('dateTo') ? $request->get('dateTo') : Carbon::now()->year;
-        // Коллектция температур запереданный год
+        // Коллектция температур за переданный год
         $cgms = CGMS::whereYear('created_at', $date)->get();
 
         $countOfCgmsCollection = $cgms->count();
-
+        // тут дополняем коллекцию до 372
         if($countOfCgmsCollection != 372) {
             $сountOfEmptyDates = 372 - $countOfCgmsCollection;
 
@@ -106,46 +106,6 @@ class TemperatureController extends Controller
                 $index++;
         }
   
-        
-
-
-        // $index = 0;
-
-        // $arr = [];
-
-        // dd($result);
-
-        // foreach($result as $val) {
-        //     if( $index == 349 || $index == 361 || $index == 363 || $index == 365 || $index == 366 ||$index == 368 ||$index == 370) {
-        //          $arr[] = '';
-        //     } elseif ($index == 349) {
-        //         $arr[] = $cgms[$val]->temperature;
-        //     } else {
-        //         $arr[] = $cgms[$val]->temperature;
-        //     }
-        //     $index++;
-        // }
-        // dd($arr);
-        // $index = 1;
-        // $result = [];
-        // $a = [];
-
-
-        // foreach($cgms as $c) {
-        //     if($index % 12 !== 0) {
-        //         $a[] = $c->temperature;
-        //     } else {
-        //         $result[] = $a;
-        //         $a = []; 
-        //           $a[] = $c->temperature; 
-        //     }
-        //      $index++;
-        // }
-
-        // foreach($cgms as $c) {
-        //        $result[] = $c->temperature;
-         
-        // }
 
         $years = YearResource::collection(Year::all());
 

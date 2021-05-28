@@ -11,6 +11,6 @@ class PowerController extends Controller
 {
     public function export($date = null)
     {
-        return Excel::download(new PowerExport($date), 'invoices.xlsx');
+        return Excel::download(new PowerExport($date), 'power.xlsx');
     }
 }

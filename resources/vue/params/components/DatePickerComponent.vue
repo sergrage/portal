@@ -13,7 +13,7 @@ export default {
             },
             set(value){
                 this.$store.commit('changeTimeDate', value)
-                this.$store.dispatch("getDataFromServer", this.$store.state.dateForRequest);
+                this.$store.dispatch("getDataFromServer", {dateTo : this.$store.state.dateForRequest});
             }
         },
     }

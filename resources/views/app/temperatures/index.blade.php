@@ -14,7 +14,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="mt-3 text-dark font-weight-bold">Температура на объектах филиала</h1>
+                            <h1 class="mt-3 text-dark font-weight-bold">Температура воздуха на объектах филиала</h1>
                         </div>
                         <div class="col-sm-12">
                             <datepicker-component></datepicker-component>

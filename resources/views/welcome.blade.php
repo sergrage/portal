@@ -39,14 +39,14 @@
                 <h4>Генерация электростанций Филиала "Карельский"</h3>
                 <generation-component></generation-component>
             </div>
-            <div class="col-12 pb-5">
+{{--             <div class="col-12 pb-5">
                 <h4>Водноэнергетические ресурсы</h3>
                 <water-component></water-component>
             </div>
             <div class="col-12 pb-5">
                 <h4>Топливо ПТЭЦ-13</h3>
                 <fuel-component></fuel-component>
-            </div>
+            </div> --}}
             
          </div>
      </div>

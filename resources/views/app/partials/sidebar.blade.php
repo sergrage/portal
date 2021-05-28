@@ -40,13 +40,37 @@
             </ul>
         </li>
         <li class="nav-item has-treeview menu-open">
-            <a href="{{ route('power') }}" class="nav-link active {{ request()->is('power') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-bolt {{ request()->is('power') ? 'text-white' : '' }}"></i>
+            <a href="#" class="nav-link active ">
+                <i class="nav-icon fas fa-bolt"></i>
                 <p>Генерация</p>
                 <i class="right fas fa-angle-left"></i>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('power') }}" class="nav-link {{ request()->is('power') ? 'active' : '' }}">
+                        <i class="fas fa-bolt nav-icon "></i> <p>Мощность/ПБР/КУ</p>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-header font-weight-bold">ОПЕР. ИНФ-Я</li>
+        <li class="nav-item has-treeview menu-open">
+            <a href="№" class="nav-link active">
+                <i class="nav-icon fas fa-hand-holding-water {{ request()->is('power') ? 'text-white' : '' }}"></i>
+                <p>Водные ресурсы</p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('reservoir') }}" class="nav-link {{ request()->is('reservoir') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tint "></i> <p>Уровни водохранилищ</p>
+                    </a>
+                    <a href="{{ route('reservoirCharts') }}" class="nav-link {{ request()->is('reservoirCharts') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chart-line"></i> <p>Графики уровней вдх</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+{{--         <li class="nav-header font-weight-bold">ОПЕР. ИНФ-Я</li> --}}
 {{--         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -65,7 +89,7 @@
                 <p>Параметр 3</p>
             </a>
         </li> --}}
-        <li class="nav-header font-weight-bold">ЗАПАСЫ</li>
+{{--         <li class="nav-header font-weight-bold">ЗАПАСЫ</li> --}}
 {{--         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -84,7 +108,7 @@
                 <p>Параметр 3</p>
             </a>
         </li> --}}
-        <li class="nav-header font-weight-bold">КОТЕЛЬНЫЕ</li>
+{{--         <li class="nav-header font-weight-bold">КОТЕЛЬНЫЕ</li> --}}
 {{--         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>

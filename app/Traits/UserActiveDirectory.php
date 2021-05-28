@@ -73,8 +73,8 @@ trait UserActiveDirectory {
     // обработка имени учетной записи
     public function prepareUserName($userName){
         $userNameLower = Str::lower($userName);
-        $userLastname = Str::ucfirst(Str::substr($userNameLower, 0, -3));
-        $userInitials= Str::upper(Str::substr($userNameLower, -2, 2));
+        $userLastname = ucfirst(Str::before($userNameLower, '.'));
+        $userInitials = Str::upper(Str::after($userNameLower, '.'));
         return  $userLastname . '.' . $userInitials;
     }
 

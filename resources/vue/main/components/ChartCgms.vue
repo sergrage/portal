@@ -10,6 +10,7 @@ export default {
         datasets: [
         {
             label: 'Средняя температура - 8' + String.fromCharCode(176) ,
+            pointRadius: 0,
             borderColor: '#393ba5',
             backgroundColor: '#393ba5',
             data: [8, 8,8, 8,8, 8,8, 8,8, 8,8, 8,8, 8, 8],
@@ -17,8 +18,8 @@ export default {
           },
           {
             label: 'Ежесуточная температура',
-            borderColor: '#a5a339',
-            backgroundColor: '#a5a339',
+            borderColor: '#a5393b',
+            backgroundColor: '#edd7d7',
             data: this.$store.state.cgms,
             fill: true
           }
@@ -31,6 +32,7 @@ export default {
         },
         responsive: true,
         maintainAspectRatio: false,
+
         elements: {
           line: {
             

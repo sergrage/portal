@@ -13,11 +13,11 @@ export default {
     computed: {
       selected: {
         get() {
-          return this.$store.state.cgmsYear;
+          return this.$store.state.selectYear;
         },
         set(value) {
-          this.$store.commit('SET_CGMSYEAR', value)
-          this.$store.dispatch('getDataFromServer', this.$store.state.cgmsYear)
+          this.$store.commit('SET_SELECT_YEAR', value)
+          this.$store.dispatch('getDataFromServer', { dateTo : this.$store.state.selectYear, reservoir: this.$store.state.selectReservoir })
         }
         
       },

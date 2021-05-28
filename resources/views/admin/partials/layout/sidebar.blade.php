@@ -36,7 +36,13 @@
                 <li class="nav-item">
                     <a href="{{route('administrator.parse.index')}}" class="nav-link">
                         <i class="fas fa-cog nav-icon"></i>
-                        <p>Парсинг</p>
+                        <p>Парсинг ЦГМС</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('administrator.parse.reservoirPage')}}" class="nav-link">
+                        <i class="fas fa-cog nav-icon"></i>
+                        <p>Парсинг уровеней вдх</p>
                     </a>
                 </li>
             </ul>

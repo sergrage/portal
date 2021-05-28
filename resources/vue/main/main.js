@@ -34,12 +34,10 @@ const app = new Vue({
          this.$store.dispatch("getPower");
          this.$store.dispatch("getFuel");
          this.$store.dispatch("getCgms");
-	},
-    mounted(){
-    	window.setInterval(() => {
-		    this.$store.dispatch("getDataFromServer");
-		}, 10000)
-        
-    }
+
+         window.setInterval(() => {
+            this.$store.dispatch("getDataFromServer");
+        }, 10000);
+	}
 });
 

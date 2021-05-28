@@ -11,14 +11,24 @@ use App\Models\CK\Power;
 use App\Models\CK\Fuel;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Cache;
+
 class GenerationController extends Controller
 {
     public function getGeneartion()
 	{
- 		Artisan::call('command:GetSumGeneration');
-		$json = Artisan::output();
-		$result = json_decode($json);
-		return response()->json($result);
+        if (Cache::has('generation')) {
+            $result = Cache::get('generation');
+            return response()->json($result);
+        } else {
+            Artisan::call('command:GetSumGeneration');
+            $json = Artisan::output();
+            $result = json_decode($json);
+            Cache::put('generation', $result, $seconds = 30);
+            return response()->json($result);
+        }
+
+ 		
     	// $result = Artisan::call('command:GetSumGeneration');
 
     	// return $result;

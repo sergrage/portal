@@ -17,7 +17,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-12">
                         <safepdf-component></safepdf-component>
-                        <safeexcel-component></safeexcel-component>
+                        <safeexcel-component class="mt-3"></safeexcel-component>
                         <datepicker-component></datepicker-component>
                         @include('app.partials.date')
                     </div><!-- /.col -->

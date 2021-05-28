@@ -22,16 +22,18 @@ class DashboardController extends Controller
 
     public function dbTest() {
         $conn = DB::connection('sqlsrv');
-        $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
+        $now = "20210525";
+        // $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
+
         $sql = "
     EXEC OIK.dbo.SrezLT
         @Cat = ?,
         @Ids = ?,
         @Time = '". $now . "'
 ";
-        $params = array("Л", "49", $now);
+        $params = array("П", "1824", $now);
         $stmt = $conn->select( $sql, $params);
 
-        dd($stmt);
+        dd((float)$stmt[0]->value);
     }
 }
