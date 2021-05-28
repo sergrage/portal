@@ -17,16 +17,22 @@ class GenerationController extends Controller
 {
     public function getGeneartion()
 	{
-        if (Cache::has('generation')) {
-            $result = Cache::get('generation');
-            return response()->json($result);
-        } else {
-            Artisan::call('command:GetSumGeneration');
-            $json = Artisan::output();
-            $result = json_decode($json);
-            Cache::put('generation', $result, $seconds = 30);
-            return response()->json($result);
-        }
+        // if (Cache::has('generation')) {
+        //     $result = Cache::get('generation');
+        //     return response()->json($result);
+        // } else {
+        //     Artisan::call('command:GetSumGeneration');
+        //     $json = Artisan::output();
+        //     $result = json_decode($json);
+        //     Cache::put('generation', $result, $seconds = 30);
+        //     return response()->json($result);
+        // }
+
+        Artisan::call('command:GetSumGeneration');
+        $json = Artisan::output();
+        $result = json_decode($json);
+        // Cache::put('generation', $result, $seconds = 30);
+        return response()->json($result);
 
  		
     	// $result = Artisan::call('command:GetSumGeneration');
