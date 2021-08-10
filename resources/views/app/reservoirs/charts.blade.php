@@ -19,21 +19,7 @@
                         <div class="col-sm-12">
                             @include('app.partials.date')
                         </div>
-                        <div class="col-12 pb-5">
-                            <girvaslinecont-chart></girvaslinecont-chart>
-                        </div>
-                        <div class="col-12 pb-5">
-                            <sandallinecont-chart></sandallinecont-chart>
-                        </div>
-                        <div class="col-12 pb-5">
-                            <segozerolinecont-chart></segozerolinecont-chart>
-                        </div>
-                        <div class="col-12 pb-5">
-                            <vigozerolinecont-chart></vigozerolinecont-chart>
-                        </div>
-                        <div class="col-12 pb-5">
-                            <ushkozerolinecont-chart></ushkozerolinecont-chart>
-                        </div>
+                        <reservoirscharts-component></reservoirscharts-component>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>

@@ -8,6 +8,7 @@ export default new Vuex.Store({
         tableData: [],
         chartsData: {},
         dateForRequest: '',
+        chartToShow: 1,
         url: '',
         selectYear: new Date().getFullYear(),
         selectReservoir: 'ReservoirGirvas',
@@ -105,6 +106,9 @@ export default new Vuex.Store({
         },
         SET_LOADED_GIRVAS(state, payload) {
             state.loadedGirvas = payload;
+        },
+        SET_CHART_TO_SHOW(state, payload) {
+            state.chartToShow = payload;
         },
     }
 })

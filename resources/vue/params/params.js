@@ -22,6 +22,9 @@ Vue.component('datepicker-component', require('./components/DatePickerComponent.
 Vue.component('reservoirselect-component', require('./components/ReservoirsSelectComponent.vue').default);
 
 
+Vue.component('reservoirscharts-component', require('./components/Charts/ReservoirsChartTabsComponent.vue').default);
+
+
 //  График уровней ВДХ Гирвас
 Vue.component('girvaslinecont-chart', require('./components/Charts/GirvasChartContainer.vue').default);
 Vue.component('girvasline-chart', require('./components/Charts/GirvasChart.vue').default);
