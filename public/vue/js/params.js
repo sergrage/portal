@@ -2165,11 +2165,24 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     show: function show(event) {
+      console.log('Привет');
+      console.log(this.chartToShow);
       var chart = event.target.getAttribute('data-show');
       var nav = document.getElementById('nav');
-      Array.from(nav.querySelectorAll('.nav-link')).forEach(function (tab) {
-        tab.classList.remove('active');
-      });
+
+      for (var i = 0; i < nav.querySelectorAll('.nav-link').length; i++) {
+        nav.querySelectorAll('.nav-link')[i].classList.remove('active');
+      } // [].slice.call(  nav.querySelectorAll('.nav-link') ).forEach(function(tab) { 
+      //     tab.classList.remove('active')
+      // });
+      // nav.querySelectorAll('.nav-link').forEach(tab => {
+      //    tab.classList.remove('active')
+      // })
+      // Array.from(nav.querySelectorAll('.nav-link')).forEach(tab => {
+      //    tab.classList.remove('active')
+      // })
+
+
       event.target.classList.add('active');
       this.$store.commit('SET_CHART_TO_SHOW', chart);
     }
@@ -6991,7 +7004,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("div", { staticStyle: { margin: "0px auto" } }, [
     _c("div", { staticClass: "col-12" }, [
       _c("ul", { staticClass: "nav nav-tabs pb-5", attrs: { id: "nav" } }, [
         _c("li", { staticClass: "nav-item" }, [

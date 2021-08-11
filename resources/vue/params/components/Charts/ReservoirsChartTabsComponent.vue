@@ -1,6 +1,6 @@
 <template>
-    <div class="row">
-            <div class="col-12">
+    <div class="" style="margin: 0px auto;">
+        <div class="col-12">
         <ul class="nav nav-tabs pb-5" id="nav">
           <li class="nav-item">
             <a class="nav-link active" href="#" data-show="1" @click.prevent="show($event)">Гирвасское водохранилище</a>
@@ -29,7 +29,7 @@
         <segozerolinecont-chart></segozerolinecont-chart>
     </div>
     <div class="col-12 pb-5" v-if="chartToShow == 4">
-        <vigozerolinecont-chart></vigozerolinecont-chart>
+         <vigozerolinecont-chart></vigozerolinecont-chart>
     </div>
     <div class="col-12 pb-5" v-if="chartToShow == 5">
         <ushkozerolinecont-chart></ushkozerolinecont-chart>
@@ -47,11 +47,24 @@ export default {
     },
     methods: {
         show(event) {
+            console.log('Привет')
+            console.log(this.chartToShow)
             var chart = event.target.getAttribute('data-show')
             var nav = document.getElementById('nav')
-            Array.from(nav.querySelectorAll('.nav-link')).forEach(tab => {
-               tab.classList.remove('active')
-            })
+
+            for (var i = 0; i < nav.querySelectorAll('.nav-link').length; i++) {
+                nav.querySelectorAll('.nav-link')[i].classList.remove('active');
+            }
+            // [].slice.call(  nav.querySelectorAll('.nav-link') ).forEach(function(tab) { 
+            //     tab.classList.remove('active')
+            // });
+
+            // nav.querySelectorAll('.nav-link').forEach(tab => {
+            //    tab.classList.remove('active')
+            // })
+            // Array.from(nav.querySelectorAll('.nav-link')).forEach(tab => {
+            //    tab.classList.remove('active')
+            // })
             event.target.classList.add('active')
             this.$store.commit('SET_CHART_TO_SHOW',chart)
         }
