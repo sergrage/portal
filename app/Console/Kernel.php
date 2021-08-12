@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('command:getPbr')->cron('30 0 * * *');
         $schedule->command('command:getAskue')->cron('55 * * * *');
 
-        $schedule->command('command:command:getReservoirsLevels')->twiceDaily(10, 11);
+        $schedule->command('command:getReservoirsLevels')->twiceDaily(10, 11);
 //        $schedule->command('command:getPower')->cron('5 * * * *');
     }
 
