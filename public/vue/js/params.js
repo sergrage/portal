@@ -2157,16 +2157,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      reservoirsName: ['ReservoirGirvas', 'ReservoirSandal', 'ReservoirSegozero', 'ReservoirVigozero', 'ReservoirUshkozero']
+    };
+  },
   computed: {
     chartToShow: function chartToShow() {
       return this.$store.state.chartToShow;
+    },
+    volume: function volume() {
+      return this.$store.state.volume;
+    },
+    volumeDate: function volumeDate() {
+      return this.$store.state.volumeDate;
+    },
+    usefulVolume: function usefulVolume() {
+      return this.$store.state.usefulVolume.toFixed(2);
+    },
+    MBS: function MBS() {
+      return this.$store.state.MBS;
     }
   },
   methods: {
     show: function show(event) {
-      console.log('Привет');
-      console.log(this.chartToShow);
       var chart = event.target.getAttribute('data-show');
       var nav = document.getElementById('nav');
 
@@ -2185,6 +2221,8 @@ __webpack_require__.r(__webpack_exports__);
 
       event.target.classList.add('active');
       this.$store.commit('SET_CHART_TO_SHOW', chart);
+      this.$store.commit('SET_RESERVOIR', this.reservoirsName[this.$store.state.chartToShow - 1]);
+      this.$store.dispatch("getReservoirVolume", this.$store.state.selectReservoir);
     }
   }
 });
@@ -2804,6 +2842,118 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {}
 });
 
 /***/ }),
@@ -7137,10 +7287,50 @@ var render = function() {
           [_c("ushkozerolinecont-chart")],
           1
         )
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", {}, [
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", [_vm._v(_vm._s(_vm.volumeDate))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.MBS))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.volume))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.usefulVolume))])
+          ])
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("Дата последнего зачения")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("отметка м БС")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("отметка млн.м"),
+          _c("sup", [_vm._v("3")])
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("% от полезного объема")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -7297,6 +7487,308 @@ var render = function() {
   )
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "table",
+      { staticClass: "table table-striped table-sm table-bordered" },
+      [
+        _c("thead", [
+          _c("tr", { attrs: { align: "center" } }, [
+            _c(
+              "th",
+              {
+                staticStyle: { "vertical-align": "middle" },
+                attrs: { scope: "col", rowspan: "3" }
+              },
+              [_vm._v("Час")]
+            ),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "6" } }, [
+              _vm._v("КСГЭС")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "13" } }, [
+              _vm._v("КВГЭС")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "11" } }, [
+              _vm._v("ККГЭС")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", { attrs: { align: "center" } }, [
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("Гирвас")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-2")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("Х/В старое русло")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-1")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("Сегозеро")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("пл. 21")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
+              _vm._v("ГЭС-7")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("пл. 25")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-3")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+              _vm._v("пл. 27")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-5")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-6")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
+              _vm._v("ГЭС-16")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
+              _vm._v("ГЭС-14")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
+              _vm._v("ГЭС-10")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
+              _vm._v("ГЭС-9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", { attrs: { align: "center" } }, [
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Д/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")])
+          ]),
+          _vm._v(" "),
+          _c("tr", { attrs: { align: "center" } }, [
+            _c("th"),
+            _vm._v(" "),
+            _c("th"),
+            _vm._v(" "),
+            _c("th"),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ]),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }),
+            _vm._v(" "),
+            _c("th", { attrs: { scope: "col" } }, [
+              _vm._v("м"),
+              _c("sup", [_vm._v("3")]),
+              _vm._v("/с")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tbody", { staticClass: "text-center" }, [
+          _c("tr"),
+          _vm._v(" "),
+          _c("tr", { staticClass: "center" })
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -26307,6 +26799,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/vue/params/components/LevelComponent.vue":
+/*!************************************************************!*\
+  !*** ./resources/vue/params/components/LevelComponent.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=template&id=2c4e56ea& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&");
+/* harmony import */ var _LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=script&lang=js& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/vue/params/components/LevelComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=template&id=2c4e56ea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/vue/params/components/PowerComponent.vue":
 /*!************************************************************!*\
   !*** ./resources/vue/params/components/PowerComponent.vue ***!
@@ -26971,6 +27532,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('safepdf-component', __webpack_require__(/*! ./components/SaveAsPdfComponent.vue */ "./resources/vue/params/components/SaveAsPdfComponent.vue")["default"]);
 Vue.component('safeexcel-component', __webpack_require__(/*! ./components/SaveAsExcelComponent.vue */ "./resources/vue/params/components/SaveAsExcelComponent.vue")["default"]);
 Vue.component('power-component', __webpack_require__(/*! ./components/PowerComponent.vue */ "./resources/vue/params/components/PowerComponent.vue")["default"]);
+Vue.component('level-component', __webpack_require__(/*! ./components/LevelComponent.vue */ "./resources/vue/params/components/LevelComponent.vue")["default"]);
 Vue.component('temperature-component', __webpack_require__(/*! ./components/TemperatureComponent.vue */ "./resources/vue/params/components/TemperatureComponent.vue")["default"]);
 Vue.component('watertemperature-component', __webpack_require__(/*! ./components/WaterTemperatureComponent.vue */ "./resources/vue/params/components/WaterTemperatureComponent.vue")["default"]);
 Vue.component('cgms-component', __webpack_require__(/*! ./components/CgmsComponent.vue */ "./resources/vue/params/components/CgmsComponent.vue")["default"]);
@@ -27003,8 +27565,8 @@ var app = new Vue({
     this.$store.commit('setCurrentUrl', window.location.pathname);
 
     if (window.location.pathname == '/reservoirCharts') {
-      console.log(123);
       this.$store.dispatch("getDataForReservoirCharts");
+      this.$store.dispatch("getReservoirVolume", this.$store.state.selectReservoir);
     } else {
       this.$store.dispatch("getDataFromServer", {
         dateTo: null,
@@ -27048,7 +27610,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
       ReservoirSegozero: 'Сегозерское водохранилище',
       ReservoirUshkozero: 'Юшкозерское водохранилище',
       ReservoirVigozero: 'Выгозерское водохранилище'
-    }
+    },
+    volumeDate: '',
+    volume: 0,
+    usefulVolume: 0,
+    MBS: 0,
+    MBSVolume: 0
   },
   actions: {
     getDataForReservoirCharts: function getDataForReservoirCharts(context, payload) {
@@ -27072,6 +27639,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
         if (response.data.years) {
           context.commit('SET_CGMSYEARS', response.data.years);
         }
+      });
+    },
+    getReservoirVolume: function getReservoirVolume(context, payload) {
+      var config = {
+        params: {
+          reservoir: payload
+        }
+      };
+      axios.get('/api/reservoirVolume', config).then(function (response) {
+        console.log(response.data.name);
+        context.commit('SET_VOLUME_DATE', response.data.volumeDate);
+        context.commit('SET_VOLUME', response.data.volume);
+        context.commit('SET_USEFUL_VOLUME', response.data.usefulVolume);
+        context.commit('SET_MBS', response.data.MBS);
       });
     },
     createPdfFile: function createPdfFile(context, payload) {
@@ -27144,6 +27725,21 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     SET_CHART_TO_SHOW: function SET_CHART_TO_SHOW(state, payload) {
       state.chartToShow = payload;
+    },
+    SET_VOLUME_DATE: function SET_VOLUME_DATE(state, payload) {
+      state.volumeDate = payload;
+    },
+    SET_VOLUME: function SET_VOLUME(state, payload) {
+      state.volume = payload;
+    },
+    SET_USEFUL_VOLUME: function SET_USEFUL_VOLUME(state, payload) {
+      state.usefulVolume = payload;
+    },
+    SET_MBS: function SET_MBS(state, payload) {
+      state.MBS = payload;
+    },
+    SET_MBS_VOLUME: function SET_MBS_VOLUME(state, payload) {
+      state.MBSVolume = payload;
     }
   }
 }));

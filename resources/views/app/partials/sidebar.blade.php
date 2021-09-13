@@ -67,6 +67,9 @@
                     <a href="{{ route('reservoirCharts') }}" class="nav-link {{ request()->is('reservoirCharts') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-line"></i> <p>Графики уровней вдх</p>
                     </a>
+                <a href="{{ route('levels') }}" class="nav-link ">
+                    <i class="nav-icon fas fa-level-up-alt"></i> <p>Уровни бьефов</p>
+                </a>
                 </li>
             </ul>
         </li>

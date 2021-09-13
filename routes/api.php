@@ -24,6 +24,7 @@ Route::get('/waterTemperature-json', [App\Http\Controllers\App\TemperatureContro
 Route::get('/cgms-json', [App\Http\Controllers\App\TemperatureController::class, 'cgmsJSON']);
 Route::get('/reservoir-json', [App\Http\Controllers\App\ReservoirController::class, 'reservoirJSON']);
 Route::get('/reservoirCharts', [App\Http\Controllers\App\ReservoirController::class, 'reservoirCharts']);
+Route::get('/reservoirVolume', [App\Http\Controllers\App\ReservoirController::class, 'reservoirVolume']);
 Route::get('/getCgms', [App\Http\Controllers\App\TemperatureController::class, 'getCgms']);
 Route::get('/generation', [App\Http\Controllers\App\GenerationController::class, 'getGeneartion']);
 Route::get('/pbrForDay', [App\Http\Controllers\App\GenerationController::class, 'getPbr']);

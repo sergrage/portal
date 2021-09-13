@@ -31,6 +31,8 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('command:getPbr')->cron('30 0 * * *');
         $schedule->command('command:getAskue')->cron('55 * * * *');
+        $schedule->command('command:getWaterVolume')->cron('15 0,7,11,14,17,21 * * *');
+        $schedule->command('command:getWater')->cron('15 * * * *');
 
         $schedule->command('command:getReservoirsLevels')->twiceDaily(10, 11);
 //        $schedule->command('command:getPower')->cron('5 * * * *');

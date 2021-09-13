@@ -45,6 +45,12 @@
                         <p>Парсинг уровеней вдх</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('administrator.parse.reservoirVolume')}}" class="nav-link">
+                        <i class="fas fa-cog nav-icon"></i>
+                        <p>Парсинг объемов вдх</p>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item has-treeview menu-open">

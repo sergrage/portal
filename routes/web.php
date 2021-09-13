@@ -17,6 +17,7 @@ Route::get('/waterTemperature', [App\Http\Controllers\App\TemperatureController:
 Route::get('/cgms', [App\Http\Controllers\App\TemperatureController::class, 'cgms'])->name('cgms');
 Route::get('/power', [App\Http\Controllers\App\PowerController::class, 'index'])->name('power');
 Route::get('/reservoir', [App\Http\Controllers\App\ReservoirController::class, 'index'])->name('reservoir');
+Route::get('/levels', [App\Http\Controllers\App\LevelController::class, 'index'])->name('levels');
 Route::get('/reservoirCharts', [App\Http\Controllers\App\ReservoirController::class, 'charts'])->name('reservoirCharts');
 
 // Аунтификация
@@ -45,10 +46,14 @@ Route::middleware(['auth', 'can:admin-panel'])->group(function () {
                 ->name('parse.index');
              Route::get('/reservoir', [App\Http\Controllers\Admin\ParseController::class, 'reservoir'])
                 ->name('parse.reservoirPage');
+            Route::get('/reservoirVolume', [App\Http\Controllers\Admin\ParseController::class, 'reservoirVolume'])
+                ->name('parse.reservoirVolume');
             Route::post('/parse', [App\Http\Controllers\Admin\ParseController::class, 'store'])
                 ->name('parse.store');
             Route::post('/parseReservoir', [App\Http\Controllers\Admin\ParseController::class, 'parseReservoir'])
                 ->name('parse.reservoir');
+            Route::post('/parseReservoirVolume', [App\Http\Controllers\Admin\ParseController::class, 'parseReservoirVolume'])
+                ->name('parse.parseReservoirVolume');
             Route::resources([
 			'users' => App\Http\Controllers\Admin\UserController::class,
 			'roles' => App\Http\Controllers\Admin\RoleController::class,

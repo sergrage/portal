@@ -12,6 +12,7 @@ Vue.component('safepdf-component', require('./components/SaveAsPdfComponent.vue'
 Vue.component('safeexcel-component', require('./components/SaveAsExcelComponent.vue').default);
 
 Vue.component('power-component', require('./components/PowerComponent.vue').default);
+Vue.component('level-component', require('./components/LevelComponent.vue').default);
 Vue.component('temperature-component', require('./components/TemperatureComponent.vue').default);
 Vue.component('watertemperature-component', require('./components/WaterTemperatureComponent.vue').default);
 Vue.component('cgms-component', require('./components/CgmsComponent.vue').default);
@@ -53,8 +54,9 @@ const app = new Vue({
         
 
         if(window.location.pathname == '/reservoirCharts') {
-        	console.log(123);
+
         	this.$store.dispatch("getDataForReservoirCharts")
+            this.$store.dispatch("getReservoirVolume", this.$store.state.selectReservoir)
 
         } else {
         	this.$store.dispatch("getDataFromServer", { dateTo : null, reservoir: null })

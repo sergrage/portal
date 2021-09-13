@@ -57,7 +57,7 @@ class User extends Authenticatable
         return $this->roles->pluck('roleName')->contains('gKRL-Fuel-Techportal');
     }
 
-    function hasRole($role) {
+    public function hasRole($role) {
         return $this->roles->pluck('roleName')->contains($role);
     }
 

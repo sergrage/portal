@@ -22,7 +22,8 @@ class DashboardController extends Controller
 
     public function dbTest() {
         $conn = DB::connection('sqlsrv');
-        $now = "20210525";
+        // $now = "20210913";
+        $now = "2021-09-13 13:00:00.000";
         // $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
 
         $sql = "
@@ -31,9 +32,10 @@ class DashboardController extends Controller
         @Ids = ?,
         @Time = '". $now . "'
 ";
-        $params = array("П", "1824", $now);
+        $params = array("W", "50", $now);
         $stmt = $conn->select( $sql, $params);
 
-        dd((float)$stmt[0]->value);
+        // dd((float)$stmt[0]->value);
+        dd($stmt);
     }
 }

@@ -19,6 +19,11 @@ class ParseController extends Controller
     	return view('admin.parse.reservoir');
     }
 
+    public function reservoirVolume()
+    {
+    	return view('admin.parse.reservoirVolume');
+    }
+
 	public function store(ParseFormNotepadRequest $request){
 		$date = Carbon::createFromFormat('d-m-Y', $request['date']);
 		$parts = preg_split('/\s+/', $request['data']); 
@@ -82,6 +87,26 @@ class ParseController extends Controller
 		}
 
 		return redirect()->route('administrator.parse.reservoirPage');			
+	}
+
+
+	public function parseReservoirVolume(Request $request)
+	{
+		$start = floatval($request['start']);
+		$resevoirName = "App\Models\Reservoirs\\" . $request['reservoir'];
+		$volumes = preg_split('/\s+/', $request['data']); 
+
+
+		foreach($volumes as $volume) {
+			$resevoirName::create([
+				'mark' => $start,
+				'volume' => ($request['reservoir'] == 'VolumeSandal') ? floatval($volume) - 325 : floatval($volume),
+			]);
+
+			$start = $start + 0.01;
+		}
+
+		return redirect()->route('administrator.parse.reservoirVolume');	
 	}
 
 }

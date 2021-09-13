@@ -161,4 +161,43 @@ class ReservoirController extends Controller
             'maxUshkozero' => $maxUshkozero, 'minUshkozero' => $minUshkozero, 'avgUshkozero' => $avgUshkozero, 'lastUshkozero' =>  $lastUshkozero, 'umoUshkozero' =>  $umoUshkozero, 'npuUshkozero' =>  $npuUshkozero, 'fpuUshkozero' =>  $fpuUshkozero,
         ]);
     }
+
+    public function reservoirVolume(Request $request)
+    {
+        $reservoirName = $request['reservoir'];
+        $reservoirsModels = [
+            'ReservoirGirvas' => 'VolumeGirvas',
+            'ReservoirSandal' => 'VolumeSandal',
+            'ReservoirSegozero' => 'VolumeSegozero',
+            'ReservoirUshkozero' => 'VolumeUshkozero',
+            'ReservoirVigozero' => 'VolumeVigozero',
+        ];
+
+        $reservoirUseful = [
+            'ReservoirGirvas' => 62.21,
+            'ReservoirSandal' => 298,
+            'ReservoirSegozero' => 4235,
+            'ReservoirUshkozero' => 1124,
+            'ReservoirVigozero' => 1140,
+        ];
+
+        $classNameReservoir = "App\Models\Reservoirs\\" . $request['reservoir'];
+        $classNameReservoirVolume = "App\Models\Reservoirs\\" . $reservoirsModels[$request['reservoir']];
+
+        $reservoirLevel = $classNameReservoir::orderBy('id', 'desc')->where('waterLevel', '<>' , -100)->take(1)->first();
+        $reservoirVolume = $classNameReservoirVolume::where('mark', '=' , $reservoirLevel->waterLevel)->take(1)->first();
+
+        $date = $reservoirLevel->created_at->format('d-m-Y');
+        $volume = $reservoirVolume->volume;
+
+        $usefulVolume = $volume / $reservoirUseful[$request['reservoir']] * 100;
+
+
+        return response()->json([
+            'volumeDate' => $date,
+            'volume' => $volume,
+            'usefulVolume' => $usefulVolume,
+            'MBS' =>  $reservoirLevel->waterLevel,
+        ]);
+    }
 }

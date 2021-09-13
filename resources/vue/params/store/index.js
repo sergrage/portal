@@ -21,6 +21,11 @@ export default new Vuex.Store({
             ReservoirUshkozero: 'Юшкозерское водохранилище',
             ReservoirVigozero: 'Выгозерское водохранилище',
         },
+        volumeDate: '',
+        volume: 0,
+        usefulVolume: 0,
+        MBS: 0,
+        MBSVolume: 0,
     },
     actions: {
 
@@ -30,8 +35,6 @@ export default new Vuex.Store({
                 // console.log(context.state.chartsData.avg);
                 context.commit('SET_LOADED_GIRVAS', true)
             });
-
-            
         },
         getDataFromServer(context, payload){
             console.log('payload', payload);
@@ -41,6 +44,18 @@ export default new Vuex.Store({
                 if(response.data.years) {
                     context.commit('SET_CGMSYEARS', response.data.years);
                 }
+            });
+        },
+        getReservoirVolume(context, payload){
+            let config = {
+                params: { reservoir:payload }
+            };
+            axios.get('/api/reservoirVolume', config).then((response) =>{
+                console.log(response.data.name)
+                context.commit('SET_VOLUME_DATE', response.data.volumeDate);
+                context.commit('SET_VOLUME', response.data.volume);
+                context.commit('SET_USEFUL_VOLUME', response.data.usefulVolume);
+                context.commit('SET_MBS', response.data.MBS);
             });
         },
         createPdfFile(context, payload){
@@ -109,6 +124,21 @@ export default new Vuex.Store({
         },
         SET_CHART_TO_SHOW(state, payload) {
             state.chartToShow = payload;
+        },
+        SET_VOLUME_DATE(state, payload) {
+            state.volumeDate = payload;
+        },
+        SET_VOLUME(state, payload) {
+            state.volume = payload;
+        },
+        SET_USEFUL_VOLUME(state, payload) {
+            state.usefulVolume = payload;
+        },
+        SET_MBS(state, payload) {
+            state.MBS = payload;
+        },
+        SET_MBS_VOLUME(state, payload) {
+            state.MBSVolume = payload;
         },
     }
 })
