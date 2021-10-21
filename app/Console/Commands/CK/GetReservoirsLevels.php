@@ -63,7 +63,7 @@ class GetReservoirsLevels extends Command
         // $now = Carbon::now('Europe/Moscow')->subDays(8)->format('Ymd');
         $now = Carbon::now('Europe/Moscow')->format('Ymd H:i:s');
         $nowYmd = Carbon::now('Europe/Moscow')->format('Ymd');
-        $dateForUpdate = Carbon::now('Europe/Moscow')->subDays(30)->format('Ymd');
+        $dateForUpdate = Carbon::now('Europe/Moscow')->subDays(45)->format('Ymd');
         
         // $now = "20210519";
 
