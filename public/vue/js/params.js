@@ -2952,8 +2952,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: {}
+  computed: {
+    waters: function waters() {
+      return this.$store.state.waters;
+    }
+  },
+  methods: {
+    round: function round(val) {
+      var precision = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+      if (typeof val == 'number') {
+        return val.toFixed(precision);
+      }
+
+      return val;
+    }
+  }
 });
 
 /***/ }),
@@ -3596,6 +3640,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "\n.datepicker[data-v-11724540] {\n    vertical-align: bottom;\n    line-height: 40px;\n    padding-left: 10px;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.blue-color[data-v-2c4e56ea]{\n    color: blue;\n    font-weight: 700;\n}\n", ""]);
 
 // exports
 
@@ -6289,6 +6352,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/ReservoirsComponent.vue?vue&type=style&index=0&id=1ef62390&scoped=true&lang=css&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/ReservoirsComponent.vue?vue&type=style&index=0&id=1ef62390&scoped=true&lang=css& ***!
@@ -7493,10 +7586,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7508,285 +7601,318 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "table",
+    { staticClass: "table table-striped table-sm table-bordered" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        { staticClass: "text-center" },
+        _vm._l(_vm.waters, function(w, index) {
+          return _c("tr", { staticClass: "center" }, [
+            _c("th", { attrs: { scope: "row" } }, [
+              _vm._v(_vm._s(index) + ":00")
+            ]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.ges2Reservoir)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes2)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.oldBed)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes1)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.segozero)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.pl21)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.pl25)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.pl27)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes5)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes6)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes16)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes14)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes10)))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.round(w.idleGes9)))])
+          ])
+        }),
+        0
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      { staticClass: "table table-striped table-sm table-bordered" },
-      [
-        _c("thead", [
-          _c("tr", { attrs: { align: "center" } }, [
-            _c(
-              "th",
-              {
-                staticStyle: { "vertical-align": "middle" },
-                attrs: { scope: "col", rowspan: "3" }
-              },
-              [_vm._v("Час")]
-            ),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "6" } }, [
-              _vm._v("КСГЭС")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "13" } }, [
-              _vm._v("КВГЭС")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "11" } }, [
-              _vm._v("ККГЭС")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", { attrs: { align: "center" } }, [
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("Гирвас")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-2")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("Х/В старое русло")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-1")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("Сегозеро")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("пл. 21")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
-              _vm._v("ГЭС-7")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("пл. 25")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-3")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
-              _vm._v("пл. 27")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-5")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-6")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "2" } }, [
-              _vm._v("ГЭС-16")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
-              _vm._v("ГЭС-14")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
-              _vm._v("ГЭС-10")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col", colspan: "3" } }, [
-              _vm._v("ГЭС-9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", { attrs: { align: "center" } }, [
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Д/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")])
-          ]),
-          _vm._v(" "),
-          _c("tr", { attrs: { align: "center" } }, [
-            _c("th"),
-            _vm._v(" "),
-            _c("th"),
-            _vm._v(" "),
-            _c("th"),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [
-              _vm._v("м"),
-              _c("sup", [_vm._v("3")]),
-              _vm._v("/с")
-            ])
-          ])
+    return _c("thead", [
+      _c("tr", { attrs: { align: "center" } }, [
+        _c(
+          "th",
+          {
+            staticStyle: { "vertical-align": "middle" },
+            attrs: { scope: "col", rowspan: "3" }
+          },
+          [_vm._v("Час")]
+        ),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "6" } }, [_vm._v("КСГЭС")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "13" } }, [_vm._v("КВГЭС")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "11" } }, [_vm._v("ККГЭС")])
+      ]),
+      _vm._v(" "),
+      _c("tr", { attrs: { align: "center" } }, [
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [_vm._v("Гирвас")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-2")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+          _vm._v("Х/В старое русло")
         ]),
         _vm._v(" "),
-        _c("tbody", { staticClass: "text-center" }, [
-          _c("tr"),
-          _vm._v(" "),
-          _c("tr", { staticClass: "center" })
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-1")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [
+          _vm._v("Сегозеро")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [_vm._v("пл. 21")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-7")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [_vm._v("пл. 25")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-3")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", rowspan: "2" } }, [_vm._v("пл. 27")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-5")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-6")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "2" } }, [_vm._v("ГЭС-16")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-14")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-10")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col", colspan: "3" } }, [_vm._v("ГЭС-9")])
+      ]),
+      _vm._v(" "),
+      _c("tr", { attrs: { align: "center" } }, [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Д/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ВБ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("р/в")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Вдх.")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Х/В")])
+      ]),
+      _vm._v(" "),
+      _c("tr", { attrs: { align: "center" } }, [
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("м"),
+          _c("sup", [_vm._v("3")]),
+          _vm._v("/с")
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -26808,9 +26934,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=template&id=2c4e56ea& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&");
+/* harmony import */ var _LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true&");
 /* harmony import */ var _LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=script&lang=js& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& */ "./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -26818,13 +26946,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _LevelComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "2c4e56ea",
   null
   
 )
@@ -26850,19 +26978,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea& ***!
-  \*******************************************************************************************/
+/***/ "./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=style&index=0&id=2c4e56ea&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_style_index_0_id_2c4e56ea_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=template&id=2c4e56ea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/vue/params/components/LevelComponent.vue?vue&type=template&id=2c4e56ea&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LevelComponent_vue_vue_type_template_id_2c4e56ea_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -27567,6 +27711,8 @@ var app = new Vue({
     if (window.location.pathname == '/reservoirCharts') {
       this.$store.dispatch("getDataForReservoirCharts");
       this.$store.dispatch("getReservoirVolume", this.$store.state.selectReservoir);
+    } else if (window.location.pathname == '/levels') {
+      this.$store.dispatch("getWatersData");
     } else {
       this.$store.dispatch("getDataFromServer", {
         dateTo: null,
@@ -27615,7 +27761,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     volume: 0,
     usefulVolume: 0,
     MBS: 0,
-    MBSVolume: 0
+    MBSVolume: 0,
+    waters: []
   },
   actions: {
     getDataForReservoirCharts: function getDataForReservoirCharts(context, payload) {
@@ -27673,6 +27820,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
         $('.modal').modal('hide');
       })["catch"](function (error) {
         console.log(error.response.data);
+      });
+    },
+    getWatersData: function getWatersData(context, payload) {
+      axios.get('/api/getWater').then(function (response) {
+        context.commit('SET_WATERS_DATE', response.data);
+        console.log(context.state.waters);
       });
     }
   },
@@ -27740,6 +27893,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     SET_MBS_VOLUME: function SET_MBS_VOLUME(state, payload) {
       state.MBSVolume = payload;
+    },
+    SET_WATERS_DATE: function SET_WATERS_DATE(state, payload) {
+      state.waters = payload;
     }
   }
 }));

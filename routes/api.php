@@ -30,6 +30,7 @@ Route::get('/generation', [App\Http\Controllers\App\GenerationController::class,
 Route::get('/pbrForDay', [App\Http\Controllers\App\GenerationController::class, 'getPbr']);
 Route::get('/powerForDay', [App\Http\Controllers\App\GenerationController::class, 'getPower']);
 Route::get('/getFuel', [App\Http\Controllers\App\GenerationController::class, 'getFuel']);
+Route::get('/getWater', [App\Http\Controllers\App\LevelController::class, 'getWater']);
 
 Route::apiResource('fuel', App\Http\Controllers\App\FuelController::class);
 Route::apiResource('cgms', App\Http\Controllers\App\CgsmController::class);

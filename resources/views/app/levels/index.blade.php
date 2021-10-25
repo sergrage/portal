@@ -13,12 +13,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12">
-                        <h1 class="mt-3 text-dark font-weight-bold">Генерация электростанций филиала "Карельский"</h1>
+                        <h1 class="mt-3 text-dark font-weight-bold">Уровни бьефов</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-12">
-                        <safepdf-component></safepdf-component>
+{{--                         <safepdf-component></safepdf-component>
                         <safeexcel-component class="mt-3"></safeexcel-component>
-                        <datepicker-component></datepicker-component>
+                        <datepicker-component></datepicker-component> --}}
                         @include('app.partials.date')
                     </div><!-- /.col -->
 
@@ -36,7 +36,7 @@
     <!-- /.content-wrapper -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{--     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body text-center">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @section('javascript')

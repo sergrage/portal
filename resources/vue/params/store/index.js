@@ -26,6 +26,7 @@ export default new Vuex.Store({
         usefulVolume: 0,
         MBS: 0,
         MBSVolume: 0,
+        waters: []
     },
     actions: {
 
@@ -74,7 +75,14 @@ export default new Vuex.Store({
             }).catch((error)=>{
                 console.log(error.response.data)
             });
-        }
+        },
+        getWatersData(context, payload){
+            axios.get('/api/getWater').then((response) =>{
+                context.commit('SET_WATERS_DATE', response.data);
+                console.log(context.state.waters)
+
+            });
+        },
     },
     getters: {
         downloadLinkPdf(state) {
@@ -140,6 +148,9 @@ export default new Vuex.Store({
         SET_MBS_VOLUME(state, payload) {
             state.MBSVolume = payload;
         },
+        SET_WATERS_DATE(state, payload){
+            state.waters = payload;
+        }
     }
 })
 

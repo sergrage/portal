@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('command:getTemperature')->hourly();
+        $schedule->command('command:getLevel')->hourly();
         $schedule->command('command:getPower')->hourlyAt(1);
 //        $schedule->command('command:getPower')->cron('* 0-23 * * *');
 

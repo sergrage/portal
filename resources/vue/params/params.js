@@ -58,6 +58,8 @@ const app = new Vue({
         	this.$store.dispatch("getDataForReservoirCharts")
             this.$store.dispatch("getReservoirVolume", this.$store.state.selectReservoir)
 
+        } else if(window.location.pathname == '/levels'){
+            this.$store.dispatch("getWatersData")
         } else {
         	this.$store.dispatch("getDataFromServer", { dateTo : null, reservoir: null })
         }

@@ -86,9 +86,38 @@
         </tr>
         </thead>
         <tbody class="text-center">
-        <tr>
-        </tr>
-        <tr class="center">
+            <tr class="center" v-for="(w, index) in waters">
+            <th scope="row">{{index}}:00</th>
+            <td>-</td>
+            <td>{{round(w.ges2Reservoir) }}</td>
+            <td>{{round(w.idleGes2) }}</td>
+            <td>{{round(w.oldBed) }}</td>
+            <td>-</td>
+            <td>{{round(w.idleGes1) }}</td>
+            <td>{{round(w.segozero) }}</td>
+            <td>{{round(w.pl21) }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{round(w.pl25) }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{round(w.pl27) }}</td>
+            <td>-</td>
+            <td>{{round(w.idleGes5) }}</td>
+            <td>-</td>
+            <td>{{round(w.idleGes6) }}</td>
+            <td>-</td>
+            <td>{{round(w.idleGes16) }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{round(w.idleGes14) }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{round(w.idleGes10) }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{round(w.idleGes9) }}</td>
 
         </tr>
         </tbody>
@@ -98,7 +127,24 @@
 <script>
 export default {
     computed: {
-
+        waters() {
+            return this.$store.state.waters;
+        },
+    },
+    methods: {
+          round(val, precision = 1) {
+            if(typeof val == 'number') {
+                return val.toFixed(precision);
+            }
+            return val;
+        },
     }
 }
 </script>
+
+<style scoped>
+    .blue-color{
+        color: blue;
+        font-weight: 700; 
+    }
+</style>
