@@ -15,6 +15,7 @@
 {{--    <link rel="stylesheet" href="/app/css/app.css">--}}
     <!-- adminlte -->
     <link href="{{ mix('/app/css/adminlte.css') }}" rel="stylesheet">
+
 {{--    <link rel="stylesheet" href="/app/css/adminlte.css">--}}
     <!-- IonIcons -->
 {{--    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">--}}
@@ -40,6 +41,7 @@
        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
        @include('app.partials.login')
        </div>
+     
        @endguest
        <!-- Sidebar Menu -->
        @yield('sidebar')
@@ -57,6 +59,7 @@
 
 {{--<script src="/app/js/app.js"></script>--}}
 <script src="{{ mix('/app/js/app.js') }}"></script>
+<script src="{{ mix('/vue/js/report.js') }}"></script>
 
 <!-- OPTIONAL SCRIPTS -->
 {{--<script src="plugins/chart.js/Chart.min.js"></script>--}}

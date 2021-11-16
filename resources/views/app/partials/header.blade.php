@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+<nav class="main-header navbar navbar-expand navbar-dark navbar-primary"  id="report">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -7,11 +7,15 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route('app')}}" class="nav-link">Главная</a>
         </li>
+
         @if(Auth::check())
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route('cabinet.cabinet')}}" class="nav-link">Кабинет</a>
         </li>
         @endif
+        <li class="nav-item">
+            <datepicker-component></datepicker-component>
+        </li>
     </ul>
 
     <!-- SEARCH FORM -->

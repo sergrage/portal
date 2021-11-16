@@ -15,6 +15,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
+                        
                         <h1 class="mt-3 text-dark font-weight-bold">Технологический сайт филиала "Карельский"</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
@@ -66,4 +67,5 @@
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script> --}}
 <script src="{{ mix('/vue/js/main.js') }}"></script>
+
 @endsection

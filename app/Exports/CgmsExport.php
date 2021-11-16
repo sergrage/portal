@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\CGMS;
+use App\Models\Cgms;
 use App\Models\Year;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
@@ -23,7 +23,7 @@ class CgmsExport implements FromView
 
         $dateForRequest = Carbon::createFromFormat('Y', $this->date, 'Europe/Moscow');
 
-        $cgms = CGMS::whereYear('created_at', $dateForRequest)->get();
+        $cgms = Cgms::whereYear('created_at', $dateForRequest)->get();
         $countOfCgmsCollection = $cgms->count();
 
 
@@ -32,7 +32,7 @@ class CgmsExport implements FromView
 
             for($i=0; $i< $сountOfEmptyDates ; $i++) {
                
-                $t = new CGMS;
+                $t = new Cgms;
                 $t->temperature = -100;
                 $t->userName = 'auto';
                 $cgms->push($t);

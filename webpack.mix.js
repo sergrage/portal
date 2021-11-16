@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
 mix.js('resources/vue/params/params.js', 'public/vue/js').version();
 mix.js('resources/vue/main/main.js', 'public/vue/js').version();
 mix.js('resources/vue/cabinet/cabinet.js', 'public/vue/js').version();
+mix.js('resources/vue/report/report.js', 'public/vue/js').version();
 
 /*
  |--------------------------------------------------------------------------

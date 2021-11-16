@@ -14,6 +14,8 @@
                 <p>О Филиале</p>
             </a>
         </li>
+        
+          
         <li class="nav-header font-weight-bold">ПАРАМЕТРЫ</li>
         <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active ">
@@ -67,7 +69,7 @@
                     <a href="{{ route('reservoirCharts') }}" class="nav-link {{ request()->is('reservoirCharts') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-line"></i> <p>Графики уровней вдх</p>
                     </a>
-                <a href="{{ route('levels') }}" class="nav-link ">
+                <a href="{{ route('levels') }}" class="nav-link {{ request()->is('levels') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-level-up-alt"></i> <p>Уровни бьефов</p>
                 </a>
                 </li>
