@@ -24,6 +24,19 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+
+//# *    *    *    *    *  command to execute
+//# ┬    ┬    ┬    ┬    ┬
+//# │    │    │    │    │
+//# │    │    │    │    │
+//# │    │    │    │    └───── day of week (0 - 6) (0 to 6 are Sunday to Saturday)
+//# │    │    │    └────────── month (1 - 12)
+//# │    │    └─────────────── day of month (1 - 31)
+//# │    └──────────────────── hour (0 - 23)
+//# └───────────────────────── min (0 - 59)
+
+
+
         // $schedule->command('inspire')->hourly();
         $schedule->command('command:getTemperature')->hourly();
         $schedule->command('command:getLevel')->hourly();
@@ -37,6 +50,11 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('command:getReservoirsLevels')->twiceDaily(10, 11);
 //        $schedule->command('command:getPower')->cron('5 * * * *');
+        $schedule->command('command:createReservoirStatistic ReservoirGirvas --update=true')->cron('1 1 1 1 *');
+        $schedule->command('command:createReservoirStatistic ReservoirSandal --update=true')->cron('1 1 1 1 *');
+        $schedule->command('command:createReservoirStatistic ReservoirSegozero --update=true')->cron('1 1 1 1 *');
+        $schedule->command('command:createReservoirStatistic ReservoirUshkozero --update=true')->cron('1 1 1 1 *');
+        $schedule->command('command:createReservoirStatistic ReservoirVigozero --update=true')->cron('1 1 1 1 *');
     }
 
     /**

@@ -85,11 +85,14 @@ class ReservoirController extends Controller
     public function reservoirCharts()
     {
         $data = ReservoirsStatistic::all();
-        $reservoirGirvas = ReservoirGirvas::whereYear('created_at', 2021)->where('waterLevel', '<>', -100)->get();
-        $reservoirSandal = ReservoirSandal::whereYear('created_at', 2021)->where('waterLevel', '<>', -100)->get();
-        $reservoirSegozero = ReservoirSegozero::whereYear('created_at', 2021)->where('waterLevel', '<>', -100)->get();
-        $reservoirVigozero = ReservoirVigozero::whereYear('created_at', 2021)->where('waterLevel', '<>', -100)->get();
-        $reservoirUshkozero = ReservoirUshkozero::whereYear('created_at', 2021)->where('waterLevel', '<>', -100)->get();
+
+        $year = Carbon::now()->year;
+
+        $reservoirGirvas = ReservoirGirvas::whereYear('created_at', $year)->where('waterLevel', '<>', -100)->get();
+        $reservoirSandal = ReservoirSandal::whereYear('created_at', $year)->where('waterLevel', '<>', -100)->get();
+        $reservoirSegozero = ReservoirSegozero::whereYear('created_at', $year)->where('waterLevel', '<>', -100)->get();
+        $reservoirVigozero = ReservoirVigozero::whereYear('created_at', $year)->where('waterLevel', '<>', -100)->get();
+        $reservoirUshkozero = ReservoirUshkozero::whereYear('created_at', $year)->where('waterLevel', '<>', -100)->get();
 
         $maxGirvas = $data->pluck('reservoirGirvasMax');
         $minGirvas = $data->pluck('reservoirGirvasMin');
