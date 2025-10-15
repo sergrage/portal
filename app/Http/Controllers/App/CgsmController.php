@@ -53,7 +53,7 @@ class CgsmController extends Controller
   
             $cgsm = Cgms::create([
                 'temperature' => $request->get('temperature'),
-                'userName' => $request->get('userName'),
+                'userName' => 'admin',
                 'created_at' => $lastCgmsDate->add(1, 'day')
             ]);
 
